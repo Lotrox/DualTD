@@ -6,7 +6,8 @@ public class freeCam : MonoBehaviour {
 	private float ScrollEdge = 0.01f; //Margen de detección de movimiento.
 	public float PanSpeed = 30; //Velocidad de desplazamiento realizando PAN.
 
-	private float limitMap = 250;
+	private float limitMapMax = 65;
+	private float limitMapMin = -15;
 	private float zoomMin = 1f; //Valor mínimo de tamaño para la proyección ortográfica.
 	private float zoomMax = 30f; //Valor máximo de tamaño para la proyección ortográfica.
 
@@ -28,15 +29,15 @@ public class freeCam : MonoBehaviour {
 
 	void translateCam()
 	{
-		if ((Input.GetKey (KeyCode.RightArrow) || Input.mousePosition.x >= Screen.width * (1 - ScrollEdge)) && ((transform.position.x <= limitMap) && (transform.position.z >= -limitMap)))
+		if ((Input.GetKey (KeyCode.RightArrow) || Input.mousePosition.x >= Screen.width * (1 - ScrollEdge)) && ((transform.position.x <= limitMapMax) && (transform.position.z >= limitMapMin)))
 		{
 			transform.Translate (Vector3.right * Time.deltaTime * ScrollSpeed, Space.Self);
-		} else if ((Input.GetKey (KeyCode.LeftArrow) || Input.mousePosition.x <= Screen.width * ScrollEdge) && ((transform.position.x >= -limitMap) && (transform.position.z <= limitMap)))
+		} else if ((Input.GetKey (KeyCode.LeftArrow) || Input.mousePosition.x <= Screen.width * ScrollEdge) && ((transform.position.x >= limitMapMax) && (transform.position.z <= limitMapMax)))
 		{
 			transform.Translate (Vector3.right * Time.deltaTime * -ScrollSpeed, Space.Self);
 		}
 
-		if ((Input.GetKey (KeyCode.UpArrow) || Input.mousePosition.y >= Screen.height * (1 - ScrollEdge)) && ((transform.position.x <= limitMap) && (transform.position.z <= limitMap)))
+		if ((Input.GetKey (KeyCode.UpArrow) || Input.mousePosition.y >= Screen.height * (1 - ScrollEdge)) && ((transform.position.x <= limitMapMax) && (transform.position.z <= limitMapMax)))
 		{
 			if (playerOne) 
 			{
@@ -48,7 +49,7 @@ public class freeCam : MonoBehaviour {
 				transform.Translate (Vector3.right * Time.deltaTime * -ScrollSpeed, Space.World);
 			}
 
-		} else if ((Input.GetKey (KeyCode.DownArrow) || Input.mousePosition.y <= Screen.height * ScrollEdge) && ((transform.position.x >= -limitMap) && (transform.position.z >= -limitMap)))
+		} else if ((Input.GetKey (KeyCode.DownArrow) || Input.mousePosition.y <= Screen.height * ScrollEdge) && ((transform.position.x >= limitMapMin) && (transform.position.z >= limitMapMin)))
 		{
 			if (playerOne) 
 			{
