@@ -7,7 +7,7 @@ public class AutoSpawn : MonoBehaviour {
 	ConcreteGrid cg;
 
 	// Use this for initialization
-	void Start () {
+	void spawner () {
 		cg = GetComponent<ConcreteGrid> ();
 		if (cg != null) {
 			uint cols = cg.getCols (),
@@ -17,7 +17,8 @@ public class AutoSpawn : MonoBehaviour {
 
 			for (uint col = 0; col < cols; ++col) {
 				for (uint row = 0; row < rows; ++row) {
-					GameObject.Instantiate (prefab, new Vector3 ((float) (col * width), 0.0f, (float) (row * height)), Quaternion.identity);
+					print (col + ", " + row);
+					GameObject.Instantiate (prefab, new Vector3 ((float) (col * width), -2.0f, (float) (row * height)), Quaternion.identity);
 				}
 			}
 		}
@@ -25,6 +26,9 @@ public class AutoSpawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetKeyDown (KeyCode.A)) {
+			print ("HOLA");
+			spawner ();
+		}
 	}
 }
