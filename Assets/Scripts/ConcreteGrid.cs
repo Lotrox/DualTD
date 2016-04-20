@@ -88,15 +88,44 @@ public class ConcreteGrid : NetworkBehaviour {
 	}
 
 	/**
+	 * Consigue el número de columnas de la malla.
+	 */
+	public uint getCols() {
+		return grid.getRows ();
+	}
+
+	/**
+	 * Consigue el número de filas de la malla.
+	 */
+	public uint getRows() {
+		return grid.getRows ();
+	}
+
+	/**
+	 * Obtiene el ancho de la casilla de la malla.
+	 */
+	public double getWidth() {
+		return grid.getWidth();
+	}
+
+	/**
+	 * Obtiene el alto de la casilla de la malla.
+	 */
+	public double getHeight() {
+		return grid.getHeight();
+	}
+
+	/**
 	 * Instanciación de las casillas del juego.
 	 */
 	void Start() {
 		grid = new RegularGrid(cols, rows, xmin, ymin, xmax, ymax);
-
+		/*
 		for (uint col = 0; col < cols; ++col) {
 			for (uint row = 0; row < rows; ++row) {
 				grid.setCell (col, row, (int) Cell.OWNER_GAME);
 			}
 		}
+		*/
 	}
 }

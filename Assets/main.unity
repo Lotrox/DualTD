@@ -5349,6 +5349,97 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400006, guid: 3f00cc78f5c186442bdf580420cba3b5, type: 2}
   m_PrefabInternal: {fileID: 1497032609}
+--- !u!1 &296601927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 296601931}
+  - 114: {fileID: 296601930}
+  - 114: {fileID: 296601929}
+  - 114: {fileID: 296601928}
+  m_Layer: 0
+  m_Name: AutoSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &296601928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 296601927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f5a0ca160234cd89a562e0b38903df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xmin: 0
+  ymin: 0
+  xmax: 100
+  ymax: 100
+  cols: 25
+  rows: 25
+--- !u!114 &296601929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 296601927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &296601930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 296601927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4badf3ddf77a45a68f1228248e0d08e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 158748, guid: 2040037f13b9b41f49a6958fb0af34d5, type: 2}
+--- !u!4 &296601931
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 296601927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!4 &296698437 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 56fcad316909a954e9befd47adff7b8d, type: 2}
@@ -8296,6 +8387,8 @@ GameObject:
   - 4: {fileID: 399051742}
   - 218: {fileID: 399051741}
   - 154: {fileID: 399051740}
+  - 114: {fileID: 399051744}
+  - 114: {fileID: 399051743}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -8356,6 +8449,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 193155756}
   m_RootOrder: 3
+--- !u!114 &399051743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399051739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f5a0ca160234cd89a562e0b38903df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xmin: 0
+  ymin: 0
+  xmax: 100
+  ymax: 100
+  cols: 1
+  rows: 1
+--- !u!114 &399051744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399051739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 1
+  m_LocalPlayerAuthority: 0
 --- !u!4 &400076763 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 2cb80d97997571442a0e8822de87b895, type: 2}
@@ -15925,7 +16067,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -200
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 50
   orthographic: 1

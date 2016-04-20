@@ -130,5 +130,19 @@ namespace Grid {
 		public void setCell(uint col, uint row, int data) {
 			grid [col, row] = data;
 		}
+
+		/**
+		 * Obtiene el ancho de la casilla de la malla.
+		 */
+		public double getWidth() {
+			return width;
+		}
+
+		/**
+		 * Obtiene el alto de la casilla de la malla.
+		 */
+		public double getHeight() {
+			return height;
+		}
 	}
 }
