@@ -3,20 +3,20 @@
  * Discretiza el espacio continuo en una matriz cuyas celdas tienen una dimensión concreta.
  */
 
-public static class RegularGrid<T> {
+/*public static class RegularGrid<T> {
 
 	/** Divisiones en 2D de la malla. */
-	private int cols, rows; // cols = x, rows = y
+	//private int cols, rows; // cols = x, rows = y
 
 	/** Matriz de tipo T que almacena un valor para la casilla normalizada (x, y) */
-	private T[,] grid;
+	//private T[,] grid;
 
 	/** Magnitud de una casilla. */
-	private double width, height;
+	//private double width, height;
 
 	/** Límites de la superficie de la malla. */
-	private double xmin, ymin, xmax, ymax;
-
+	//private double xmin, ymin, xmax, ymax;
+//
 	/**
 	 * Constructor de una malla regular.
 	 * 
@@ -27,8 +27,8 @@ public static class RegularGrid<T> {
 	 * @param ymin Componente mínima en Y de la superficie.
 	 * @param ymax Componente máxima en Y de la superficie.
 	 */
-	RegularGrid(uint _x, uint _y, double _xmin, double _ymin, double _xmax, double _ymax) {
-		cols   = _x;
+	/*RegularGrid(uint _x, uint _y, double _xmin, double _ymin, double _xmax, double _ymax) {
+	/	cols   = _x;
 		rows   = _y;
 		grid   = new T[_x, _y];
 		width  = (_xmax - _xmin) / _x;
@@ -37,7 +37,7 @@ public static class RegularGrid<T> {
 		ymin   = _ymin;
 		xmax   = _xmax;
 		ymax   = _ymax;
-	}
+	}*/
 
 	/**
 	 * Determina si un punto de superficie está dentro de la malla.
@@ -45,10 +45,10 @@ public static class RegularGrid<T> {
 	 * @param x Componente X de la superficie.
 	 * @param y Componente Y de la superficie.
 	 */
-	private bool isContained(double x, double y) {
+/*private bool isContained(double x, double y) {
 		return (((xmin <= x) && (x < xmax)) && ((ymin <= x) && (y < ymax)));
 	}
-
+*/
 	/**
 	 * Normaliza los valores de un punto de superficie a una casilla de la malla.
 	 * Cuando la normalización no es posible (porque el punto sobresalga de la superficie), devuelve False.
@@ -58,7 +58,7 @@ public static class RegularGrid<T> {
 	 * @param c Parámetro de salida.  Columna de la malla.
 	 * @param r Parámetro de salida.  Fila de la malla.
 	 */
-	private bool normalized(double x, double y, ref int c, ref int r) {
+/*	private bool normalized(double x, double y, ref int c, ref int r) {
 		if (isContained (x, y)) {
 			c = (int)(((x - xmin) / width) * cols);
 			r = (int)(((y - ymin) / height) * rows);
@@ -69,3 +69,4 @@ public static class RegularGrid<T> {
 
 
 }
+*/
