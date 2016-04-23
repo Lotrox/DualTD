@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11435120}
   - 114: {fileID: 11473082}
   - 114: {fileID: 11484314}
+  - 114: {fileID: 11464444}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -38,7 +39,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186930}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e96bfc5fe582ceb4fa847390fb726507, type: 3}
   m_Name: 
@@ -50,12 +51,27 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186930}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21ccbeb50f4fa7146bb0992f95cd81e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 15
+--- !u!114 &11464444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91888206d550724f8ba71368850e2ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m: {fileID: 2100000, guid: 6c5bd790c9b64a742a8db3a6bedb1960, type: 2}
+  maxA: 0.9
+  minA: 0.8
+  f: 0.5
 --- !u!114 &11473082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,7 +133,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c5bd790c9b64a742a8db3a6bedb1960, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 186930}
