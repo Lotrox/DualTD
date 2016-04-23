@@ -24,7 +24,6 @@ public class TowerSpawner : NetworkBehaviour {
 			if ((id.getId() == 1) && (!goc.tag.Equals ("casilla_j2")))
 				return;
 			CmdSpawn (hit.point, id.getColor(), gameObject, goc); // Lo llaman los clientes!
-			goc.GetComponent<Renderer>().enabled = false;
 		}
 	}
 
@@ -35,6 +34,7 @@ public class TowerSpawner : NetworkBehaviour {
 		//if (m.currentMoney >= 10) {
 		
 		GameObject instance = (GameObject)Instantiate (tower, goc.transform.position, goc.transform.rotation);
+		instance.GetComponent<SyncTowerBase> ().setTowerBase (goc).deactivate ();
 			//instance.GetComponent<SyncColor> ().myColor = c;
 		//	instance.GetComponent<SyncOwner> ().setOwner (gop);
 			//go.GetComponent<Money> ().GainMoney (-10);
