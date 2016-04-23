@@ -24,6 +24,7 @@ public class TowerSpawner : NetworkBehaviour {
 			if ((id.getId() == 1) && (!goc.tag.Equals ("casilla_j2")))
 				return;
 			CmdSpawn (hit.point, id.getColor(), gameObject, goc); // Lo llaman los clientes!
+			goc.GetComponent<Renderer>().enabled = false;
 		}
 	}
 

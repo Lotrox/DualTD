@@ -11,6 +11,8 @@ public class PlayerId : NetworkBehaviour {
 	Color c;
 
 	public void Start(){
+		if (!isLocalPlayer)
+			return;
 		// Asignación de cámaras.
 		print("Identificador:" + id);
 		if (id == 0) {
