@@ -3,16 +3,20 @@ using System.Collections;
 
 public class Flicking : MonoBehaviour {
 
-	public Material m;
+	public Material m1;
+	public Material m2;
+	private Material m;
 	public float maxA = 0.9f; // Máxima amplitud de la onda.
 	public float minA = 0.8f; // Mínima amplitud de la onda.
 	public float f = 0.5f; // Frecuencia de la onda.
 
-	// Use this for initialization
-	void Start () {
-		//m = GetComponent<Renderer> ().sharedMaterial;
+	public void swapMaterial(bool playerOne){
+		if (playerOne)
+			m = m1;
+		else
+			m = m2;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (m == null)

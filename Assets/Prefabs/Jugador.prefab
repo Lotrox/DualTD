@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11435120}
   - 114: {fileID: 11473082}
   - 114: {fileID: 11484314}
-  - 114: {fileID: 11464444}
+  - 114: {fileID: 11451638}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 15
---- !u!114 &11464444
+--- !u!114 &11451638
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -68,7 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91888206d550724f8ba71368850e2ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m: {fileID: 2100000, guid: 6c5bd790c9b64a742a8db3a6bedb1960, type: 2}
+  m1: {fileID: 2100000, guid: 6c5bd790c9b64a742a8db3a6bedb1960, type: 2}
+  m2: {fileID: 2100000, guid: 3c0ce888ad8ba304d860101471c6ef2e, type: 2}
   maxA: 0.9
   minA: 0.8
   f: 0.5
@@ -142,6 +143,14 @@ Prefab:
       propertyPath: m
       value: 
       objectReference: {fileID: 2100000, guid: 6c5bd790c9b64a742a8db3a6bedb1960, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m1
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c5bd790c9b64a742a8db3a6bedb1960, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m2
+      value: 
+      objectReference: {fileID: 2100000, guid: 3c0ce888ad8ba304d860101471c6ef2e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 186930}

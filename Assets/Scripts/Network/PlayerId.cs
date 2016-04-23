@@ -12,12 +12,15 @@ public class PlayerId : NetworkBehaviour {
 
 	public void Start(){
 		// Asignación de cámaras.
+		print("Identificador:" + id);
 		if (id == 0) {
 			Camera.main.transform.position = new Vector3 (18.0f, 30.0f, -24.0f);
 			Camera.main.GetComponent<freeCam>().updateCamera (false);
+			GetComponent<Flicking> ().swapMaterial (true); 
 		} else if (id == 1) {
 			Camera.main.transform.position = new Vector3 (82.0f, 30.0f, 124.0f);
 			Camera.main.GetComponent<freeCam>().updateCamera (true);
+			GetComponent<Flicking> ().swapMaterial (false); 
 		} 
 	}
 
