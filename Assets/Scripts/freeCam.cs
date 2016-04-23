@@ -15,8 +15,12 @@ public class freeCam : MonoBehaviour {
 
 
 	public void updateCamera(bool playerTwo){
-		if(!playerTwo) transform.eulerAngles = new Vector3(30, 0, 0);
-		else transform.eulerAngles = new Vector3(30, 180, 0);
+		if (!playerTwo)
+			transform.eulerAngles = new Vector3 (30, 0, 0);
+		else {
+			transform.eulerAngles = new Vector3 (30, 180, 0);
+			playerOne = false;
+		}
 	}
 
 	void Update () {

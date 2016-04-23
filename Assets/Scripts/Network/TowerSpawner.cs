@@ -16,9 +16,13 @@ public class TowerSpawner : NetworkBehaviour {
 			RaycastHit hit = new RaycastHit ();
 			Physics.Raycast (vRay, out hit, 1000);
 			GameObject goc = hit.collider.gameObject;
+			if ((!goc.tag.Equals("casilla_j1")) && (!goc.tag.Equals("casilla_j2")))
+				return;
 			PlayerId id = gameObject.GetComponent<PlayerId> ();
-			print (id.getId ());
-			print ("RAY");
+			if ((id.getId() == 0) && (!goc.tag.Equals ("casilla_j1")))
+				return;
+			if ((id.getId() == 1) && (!goc.tag.Equals ("casilla_j2")))
+				return;
 			CmdSpawn (hit.point, id.getColor(), gameObject, goc); // Lo llaman los clientes!
 		}
 	}
