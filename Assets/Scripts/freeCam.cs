@@ -13,14 +13,13 @@ public class freeCam : MonoBehaviour {
 
 	private bool playerOne = true;
 
-	void Update () {
 
-		if (Input.GetKeyDown(KeyCode.C)) //Cambiar a vista del jugador contrario.
-		{ 
-			if(playerOne) transform.eulerAngles = new Vector3(30, 225, 0);
-			else transform.eulerAngles = new Vector3(30, 45, 0);
-			playerOne = !playerOne;
-		}
+	public void updateCamera(bool playerTwo){
+		if(!playerTwo) transform.eulerAngles = new Vector3(30, 0, 0);
+		else transform.eulerAngles = new Vector3(30, 180, 0);
+	}
+
+	void Update () {
 		if (Input.GetKey (KeyCode.Mouse1)) panCam ();
 		else if(Input.GetKey(KeyCode.Space)) translateCam ();
 		zoomCam ();
