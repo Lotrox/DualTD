@@ -13289,7 +13289,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!4 &682824003 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 0f76b711e7932ee4d906ff3d889fc5a7, type: 2}
@@ -19709,7 +19709,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!23 &1005988621
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26831,7 +26831,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!23 &1474441134
 MeshRenderer:
   m_ObjectHideFlags: 0
