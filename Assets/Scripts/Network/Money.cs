@@ -5,7 +5,7 @@ using System.Collections;
 
 public class Money : NetworkBehaviour {
 
-	public const int initialMoney = 0;
+	public const int initialMoney = 100;
 
 	[SyncVar(hook = "hook_CurrentMoney")]
 	public int currentMoney = initialMoney;
@@ -26,7 +26,7 @@ public class Money : NetworkBehaviour {
 	}
 
 	protected virtual void CurrentMoney(int _currentMoney){
-		// print ("Vida sincronizada: " + _currentHealth);
+		print ("Dinero sincronizado: " + _currentMoney);
 	}
 
 }

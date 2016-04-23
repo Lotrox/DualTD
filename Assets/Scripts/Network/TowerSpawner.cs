@@ -24,23 +24,25 @@ public class TowerSpawner : NetworkBehaviour {
 			if ((id.getId() == 1) && (!goc.tag.Equals ("casilla_j2")))
 				return;
 			CmdSpawn (hit.point, id.getColor(), gameObject, goc); // Lo llaman los clientes!
-			goc.SetActive(false);
+			// goc.SetActive(false);
 		}
 	}
 
 	// Lo ejecuta el servidor!
 	[Command]
 	void CmdSpawn(Vector3 point, Color c, GameObject gop, GameObject goc) {
-		//Money m = go.GetComponent<Money> ();
-		//if (m.currentMoney >= 10) {
-		
-		GameObject instance = (GameObject)Instantiate (tower, goc.transform.position, goc.transform.rotation);
-		instance.GetComponent<SyncTowerBase> ().setTowerBase (goc).deactivate ();
+		Money m = gop.GetComponent<Money> ();
+		Health h = gop.GetComponent<Health> ();
+		TowerInfo ti = tower.GetComponent<TowerInfo> ();
+		if (m.currentMoney >= ti.cost) {
+			GameObject instance = (GameObject)Instantiate (tower, goc.transform.position, goc.transform.rotation);
+			instance.GetComponent<SyncTowerBase> ().setTowerBase (goc).deactivate ();
+			instance.GetComponent<SyncOwner> ().setOwner (gop);
 			//instance.GetComponent<SyncColor> ().myColor = c;
-		//	instance.GetComponent<SyncOwner> ().setOwner (gop);
-			//go.GetComponent<Money> ().GainMoney (-10);
+			m.GainMoney (-ti.cost);
+			h.TakeDamage ((int)ti.damagePerHit);
 			NetworkServer.SpawnWithClientAuthority (instance, base.connectionToClient);
-		//}
+		}
 	}
 		
 }

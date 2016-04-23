@@ -5,7 +5,7 @@ using System.Collections;
 
 public class Health : NetworkBehaviour {
 
-	public const int maxHealth = 15;
+	public const int maxHealth = 150;
 
 	[SyncVar(hook = "hook_CurrentHealth")]
 	public int currentHealth = maxHealth;
@@ -38,7 +38,7 @@ public class Health : NetworkBehaviour {
 	}
 
 	protected virtual void CurrentHealth(int _currentHealth){
-		// print ("Vida sincronizada: " + _currentHealth);
+		print ("Vida sincronizada: " + _currentHealth);
 	}
 
 

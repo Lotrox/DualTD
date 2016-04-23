@@ -47,6 +47,9 @@ GameObject:
   - 4: {fileID: 487088}
   - 114: {fileID: 11474898}
   - 114: {fileID: 11438516}
+  - 114: {fileID: 11460182}
+  - 114: {fileID: 11418334}
+  - 114: {fileID: 11450950}
   m_Layer: 0
   m_Name: PrefabBasicoTorreCubo
   m_TagString: Untagged
@@ -194,6 +197,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9759289, y: 2.8864012, z: 2.1170607}
   m_Center: {x: -0.0007671118, y: 1.3354087, z: 0}
+--- !u!114 &11418334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc79fb05152c40bca1b59d714c598fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 10
+  range: 2
+  damagePerHit: 8
+  damagePerArea: 0
+  speedAttack: 500
 --- !u!114 &11438516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,6 +224,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea17af0ee73be4e8597a59055e7d9117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11450950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2ea0959b2661443b0c409b67268602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11460182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392873f53069b8243bba650cea8c43a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMoney: 10
 --- !u!114 &11474898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -267,6 +309,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPlayerAuthority
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: currentMoney
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
