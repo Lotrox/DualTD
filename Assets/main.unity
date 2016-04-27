@@ -9918,11 +9918,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
-  intensity: 3.44
-  chromaticAberration: 0.82
+  intensity: 3
+  chromaticAberration: 0.2
   axialAberration: 0.5
-  blur: 0
-  blurSpread: 0.75
+  blur: 0.34
+  blurSpread: 4.31
   luminanceDependency: 0.25
   blurDistance: 2.5
   vignetteShader: {fileID: 4800000, guid: 627943dc7a9a74286b70a4f694a0acd5, type: 3}
@@ -9941,7 +9941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualizeFocus: 0
-  focalLength: 13.29
+  focalLength: 16.02
   focalSize: 0.27
   aperture: 11.5
   focalTransform: {fileID: 0}
@@ -9972,9 +9972,9 @@ MonoBehaviour:
   tweakMode: 0
   screenBlendMode: 1
   hdr: 0
-  sepBlurSpread: 4.26
+  sepBlurSpread: 2.5
   quality: 1
-  bloomIntensity: 0.77
+  bloomIntensity: 0.68
   bloomThreshold: 0.39
   bloomThresholdColor: {r: 1, g: 1, b: 1, a: 1}
   bloomBlurIterations: 2
@@ -10053,11 +10053,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -200
-  far clip plane: 1000
+  near clip plane: -800
+  far clip plane: 100
   field of view: 50
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 18
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -10078,7 +10078,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 789876080}
   m_LocalRotation: {x: 0.25881907, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 60.9, y: 30, z: -21}
+  m_LocalPosition: {x: 45.37, y: 30, z: 9.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10231,7 +10231,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScrollSpeed: 30
+  ScrollEdge: 0.02
   PanSpeed: 30
+  zoomMin: 2
+  zoomMax: 18
 --- !u!95 &789876094
 Animator:
   serializedVersion: 3
