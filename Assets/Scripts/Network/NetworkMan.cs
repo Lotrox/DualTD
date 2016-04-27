@@ -26,12 +26,17 @@ public class NetworkMan : NetworkManager {
 	public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
 	{
 		GameObject player = (GameObject)Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
-		if (count < 2) {
+		if (count < 2) 
+		{
 			player.GetComponent<PlayerId> ().setAttributes (count, new Color (Random.Range (0.0f, 1.0f), Random.Range (0.0f, 1.0f), Random.Range (0.0f, 1.0f), 1.0f));
 			NetworkServer.AddPlayerForConnection (conn, player, playerControllerId);
-			if (count == 0) {
+
+			if (count == 0) 
+			{
 				A = player;
-			} else {
+			} 
+			else 
+			{
 				B = player;
 				waveTime = globalTime = Time.realtimeSinceStartup;
 				print ("Ha comenzado la partida");
@@ -56,6 +61,7 @@ public class NetworkMan : NetworkManager {
 					waveTime = Time.realtimeSinceStartup;
 					waveSpawned = false;
 					// Descanso de 30 segundos.
+					NetworkRpc.Instance.RpcStandby();
 				}
 			}
 		}
@@ -64,15 +70,15 @@ public class NetworkMan : NetworkManager {
 			// Falta algún jugador.
 		}
 	}
-
+		
 	bool waveFinished() {
 		print ("La oleada ha finalizado");
 		return true;
 	}
-
+		
 	void spawnUnits() {
 		print ("Se han generado los súbditos");
 	}
-
+		
 }
 
