@@ -13,30 +13,33 @@ public class TowerSpawner : NetworkBehaviour {
 		RejectOut = 2,
 		RejectMoney = 3
 	};
-
-
+			
 	[ClientRpc]
 	void RpcTowerBase(TowerCase tc)
 	{
 		if (!isLocalPlayer)
 			return;
-		
+
+		TowerBase (tc);
+	}
+
+	void TowerBase(TowerCase tc) {
 		switch (tc) 
 		{
-			case TowerCase.PushConfirm:
-				print ("Torre colocada.");
-				break;
-			case TowerCase.PopConfirm:
-				print ("Torre eliminada.");
-				break;
-			case TowerCase.RejectOut:
-				print ("No se puede construír aquí.");
-				break;
-			case TowerCase.RejectMoney:
-				print ("No tienes suficiente dinero.");
-				break;
-			default:
-				break;
+		case TowerCase.PushConfirm:
+			print ("Torre colocada.");
+			break;
+		case TowerCase.PopConfirm:
+			print ("Torre eliminada.");
+			break;
+		case TowerCase.RejectOut:
+			print ("No se puede construír aquí.");
+			break;
+		case TowerCase.RejectMoney:
+			print ("No tienes suficiente dinero.");
+			break;
+		default:
+			break;
 		};
 	}
 
@@ -56,7 +59,7 @@ public class TowerSpawner : NetworkBehaviour {
 
 			if (((playerId.getId () == 0) && (!collider.tag.Equals ("casilla_j1"))) || ((playerId.getId () == 1) && (!collider.tag.Equals ("casilla_j2"))))
 			{
-				RpcTowerBase (TowerCase.RejectOut);
+				TowerBase (TowerCase.RejectOut);
 				return;
 			}
 
