@@ -7,6 +7,10 @@ TagManager:
   - casilla_j1
   - casilla_j2
   - Enemigo
+  - S1
+  - E1
+  - S2
+  - E2
   layers:
   - Default
   - TransparentFX

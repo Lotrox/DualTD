@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11473082}
   - 114: {fileID: 11484314}
   - 114: {fileID: 11451638}
+  - 114: {fileID: 11426070}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -31,6 +32,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11426070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b63b3104bd7d64abeb48c0b10d039da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creep: {fileID: 0}
 --- !u!114 &11451638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,6 +148,10 @@ Prefab:
       propertyPath: money
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: creep
+      value: 
+      objectReference: {fileID: 130306, guid: 9aa4b8916e6244f6581d65eb87642020, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 186930}
