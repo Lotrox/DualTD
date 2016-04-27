@@ -6,11 +6,13 @@ public class NetworkMan : NetworkManager {
 
 	int count;
 	int wave = 0;
+	int unitsPerWave = 3;
 	bool waveSpawned = false;
 	float globalTime, // Trata sobre el tiempo global desde que se inició la partida.
 	      waveTime; // Trata sobre el tiempo desde que se inició la última oleada y/o en curso.
 
 	GameObject A, B; // Jugadores 1 y 2.
+	public int unitsAlive = 0; // Unidades vivas en una oleada.
 
 	// https://github.com/fholm/unityassets/blob/master/VoiceChat/Assets/VoiceChat/Scripts/Demo/HLAPI/VoiceChatNetworkManager.cs
 	// http://docs.unity3d.com/Manual/UNetPlayers.html (OnServerAddPlayer)
@@ -73,12 +75,17 @@ public class NetworkMan : NetworkManager {
 	}
 		
 	bool waveFinished() {
-		print ("La oleada ha finalizado");
-		return true;
+		if (unitsAlive == 0)
+			print ("La oleada ha finalizado");
+		
+		return (unitsAlive == 0);
 	}
 		
 	void spawnUnits() {
-		print ("Se han generado los súbditos");
+		++wave;
+
+		// El servidor notifica que los jugadores van a crear unidades. (Necesita su autoridad).
+		NetworkRpc.getInstance ().RpcSpawnUnits (wave);
 	}
 		
 }

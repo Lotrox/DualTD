@@ -69,6 +69,8 @@ public class TowerAttack : NetworkBehaviour {
 				if (unit.health > 0) {
 					--unit.health;
 				} else {
+					--(((NetworkMan) NetworkMan.singleton).unitsAlive);
+					print ("Quedan " + (((NetworkMan)NetworkMan.singleton).unitsAlive) + " unidades vivas.");
 					Destroy (g);
 				}
 			}
