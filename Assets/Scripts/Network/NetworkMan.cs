@@ -28,6 +28,7 @@ public class NetworkMan : NetworkManager {
 		GameObject player = (GameObject)Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
 		if (count < 2) 
 		{
+			NetworkRpc.getInstance ().RpcStandby ();
 			player.GetComponent<PlayerId> ().setAttributes (count, new Color (Random.Range (0.0f, 1.0f), Random.Range (0.0f, 1.0f), Random.Range (0.0f, 1.0f), 1.0f));
 			NetworkServer.AddPlayerForConnection (conn, player, playerControllerId);
 
@@ -61,7 +62,7 @@ public class NetworkMan : NetworkManager {
 					waveTime = Time.realtimeSinceStartup;
 					waveSpawned = false;
 					// Descanso de 30 segundos.
-					NetworkRpc.Instance.RpcStandby();
+					NetworkRpc.getInstance().RpcStandby();
 				}
 			}
 		}
