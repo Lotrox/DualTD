@@ -56,8 +56,6 @@ public class TowerAttack : NetworkBehaviour {
 	{
 		if (!isServer)
 			return;
-		
-		print (enemyInRange.Count);
 
 		// Los enemigos abatidos son eliminados de la lista<.
 		List<GameObject> toDelete = new List<GameObject> ();
@@ -76,8 +74,6 @@ public class TowerAttack : NetworkBehaviour {
 			}
 		}
 		enemyInRange.RemoveAll (x => toDelete.Contains(x));
-
-		print (enemyInRange.Count);
 	}
 		
 
