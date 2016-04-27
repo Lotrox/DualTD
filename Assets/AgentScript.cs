@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class AgentScript : MonoBehaviour {
+public class AgentScript : NetworkBehaviour {
 
+	[SyncVar]
 	public Transform target;
+
 	NavMeshAgent agent;
 
 	// Use this for initialization
