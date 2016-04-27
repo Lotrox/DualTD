@@ -7131,7 +7131,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!1001 &605317329
 Prefab:
   m_ObjectHideFlags: 0
@@ -10702,7 +10702,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!1 &827883318
 GameObject:
   m_ObjectHideFlags: 0
@@ -17615,7 +17615,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!1 &1543410089
 GameObject:
   m_ObjectHideFlags: 0
@@ -23168,7 +23168,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!1 &1900517716
 GameObject:
   m_ObjectHideFlags: 0
