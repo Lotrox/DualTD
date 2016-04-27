@@ -27,17 +27,11 @@ public class NetworkMan : NetworkManager {
 	{
 		GameObject player = (GameObject)Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
 		if (count < 2) {
-			player.GetComponent<PlayerId> ().setAttributes(count, new Color(Random.Range(0.0f, 1.0f),Random.Range(0.0f, 1.0f),Random.Range(0.0f, 1.0f),1.0f));
+			player.GetComponent<PlayerId> ().setAttributes (count, new Color (Random.Range (0.0f, 1.0f), Random.Range (0.0f, 1.0f), Random.Range (0.0f, 1.0f), 1.0f));
 			NetworkServer.AddPlayerForConnection (conn, player, playerControllerId);
-		} 
-		else
-		{
-			if (count == 0)
-			{
+			if (count == 0) {
 				A = player;
-			} 
-			else 
-			{
+			} else {
 				B = player;
 				waveTime = globalTime = Time.realtimeSinceStartup;
 				print ("Ha comenzado la partida");
@@ -73,7 +67,7 @@ public class NetworkMan : NetworkManager {
 
 	bool waveFinished() {
 		print ("La oleada ha finalizado");
-		return false;
+		return true;
 	}
 
 	void spawnUnits() {
