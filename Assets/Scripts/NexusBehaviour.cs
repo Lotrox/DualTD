@@ -19,8 +19,7 @@ public class NexusBehaviour : NetworkBehaviour {
 		if (!isServer)
 			return;
 		if (other.tag == "Enemigo") {
-			print ("Enter enter");
-
+			
 			GameObject A = (((NetworkMan)NetworkMan.singleton).A),
 					   B = (((NetworkMan)NetworkMan.singleton).B);
 			PlayerId playerId = null;
@@ -38,6 +37,7 @@ public class NexusBehaviour : NetworkBehaviour {
 			} 
 
 			playerId.TakeDamage (unit.damage);
+			syncOwner.getOwner ().GetComponent<PlayerId> ().GainMoney (unit.money);
 			Destroy(other.gameObject);
 			--(((NetworkMan)NetworkMan.singleton).unitsAlive);
 		}
