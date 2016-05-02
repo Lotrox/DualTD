@@ -9,4 +9,9 @@ public class UnitInfo : MonoBehaviour {
 	public double resistance = 5; // Resistencia al daño.
 	public int speed = 1; // Velocidad de movimiento.
 
+	void Start() {
+		NavMeshAgent nma = GetComponent<NavMeshAgent> ();
+		nma.speed = speed;
+		nma.acceleration = speed / 10.0f;
+	}
 }
