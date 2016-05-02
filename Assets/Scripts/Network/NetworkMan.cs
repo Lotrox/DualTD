@@ -53,22 +53,20 @@ public class NetworkMan : NetworkManager {
 	{
 		if (count >= 2) // Los 2 jugadores están en partida.
 		{
-			if (Time.realtimeSinceStartup >= waveTime + 20.0f)
+			if (!waveSpawned) 
 			{
-				if (!waveSpawned) 
+				if (Time.realtimeSinceStartup >= waveTime + 20.0f)
 				{
-					waveTime = Time.realtimeSinceStartup;
 					spawnUnits ();
 					waveSpawned = true;
 				}
-				if (waveFinished ()) 
-				{
-					waveTime = Time.realtimeSinceStartup;
-					waveSpawned = false;
-					// Descanso de 20 segundos.
-					A.GetComponent<NetworkRpc> ().RpcStandby ();
-					B.GetComponent<NetworkRpc> ().RpcStandby ();
-				}
+			}else if (waveFinished ()) 
+			{
+				waveTime = Time.realtimeSinceStartup;
+				waveSpawned = false;
+				// Descanso de 20 segundos.
+				A.GetComponent<NetworkRpc> ().RpcStandby ();
+				B.GetComponent<NetworkRpc> ().RpcStandby ();
 			}
 		}
 		else 
