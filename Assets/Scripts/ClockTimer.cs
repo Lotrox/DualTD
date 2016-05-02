@@ -17,14 +17,14 @@ public class ClockTimer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//if (Time.realtimeSinceStartup >= waveTime + 30.0f) {
-		if (GameObject.FindGameObjectWithTag ("wave").GetComponent<Text> ().text == "20 seg")
-			waveTime = Time.realtimeSinceStartup;
-		else
-			return;
 		if ((timeWait - Time.realtimeSinceStartup - waveTime) > 1){
 			t.text = (timeWait - Time.realtimeSinceStartup - waveTime).ToString("F2") + " seg";
 			GameObject.FindGameObjectWithTag ("wave").GetComponent<Text>().text = t.text;
 		}
+	}
+
+	static public void updateTime(){
+			waveTime = Time.realtimeSinceStartup;
 	}
 
 
