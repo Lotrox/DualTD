@@ -99,6 +99,7 @@ public class TowerAttack : NetworkBehaviour {
 					UnitInfo unit = g.GetComponent<UnitInfo> ();
 					if (unit.health > 0) {
 						lastHit = Time.realtimeSinceStartup;
+						gameObject.transform.LookAt(g.transform);
 						unit.health -= (int) ti.damagePerHit;
 					}
 					if (unit.health <= 0) {

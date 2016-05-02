@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f663bcedeea59e40a4808cb2c8d8a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 158748, guid: 2040037f13b9b41f49a6958fb0af34d5, type: 2}
+  tower: {fileID: 137752, guid: ed8ad73abd6919b49a7c93d79e9ef01d, type: 2}
 --- !u!114 &11474110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,7 +155,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: tower
       value: 
-      objectReference: {fileID: 158748, guid: 2040037f13b9b41f49a6958fb0af34d5, type: 2}
+      objectReference: {fileID: 137752, guid: ed8ad73abd6919b49a7c93d79e9ef01d, type: 2}
     - target: {fileID: 0}
       propertyPath: health
       value: 100
