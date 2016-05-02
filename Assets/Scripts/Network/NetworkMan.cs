@@ -56,6 +56,7 @@ public class NetworkMan : NetworkManager {
 			{
 				if (!waveSpawned) 
 				{
+					waveTime = Time.realtimeSinceStartup;
 					spawnUnits ();
 					waveSpawned = true;
 				}

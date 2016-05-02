@@ -59,7 +59,7 @@ public class TowerAttack : NetworkBehaviour {
 			if (recentlyPush)
 			{
 				recentlyPush = false;
-				scanEnemies ();
+				scanEnemies (other);
 			}
 		}
 	}
