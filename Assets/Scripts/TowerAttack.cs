@@ -34,7 +34,7 @@ public class TowerAttack : NetworkBehaviour {
 			SyncOwner enemyOwner = other.gameObject.GetComponent<SyncOwner> (),
 			towerOwner = GetComponent<SyncOwner> ();
 
-			if (enemyOwner != towerOwner)
+			if (enemyOwner.getOwner() != towerOwner.getOwner())
 			{
 				print ("Adversario");
 				UnitInfo unit = other.gameObject.GetComponent<UnitInfo> ();
