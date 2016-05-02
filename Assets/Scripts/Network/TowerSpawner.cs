@@ -77,7 +77,6 @@ public class TowerSpawner : NetworkBehaviour {
 
 		if (playerId.money >= towerInfo.cost) {
 			GameObject instance = (GameObject)Instantiate (tower, collider.transform.position, collider.transform.rotation);
-
 			instance.GetComponent<SyncTowerBase> ().setTowerBase (collider).deactivate ();
 			instance.GetComponent<SyncOwner> ().setOwner (player);
 			//instance.GetComponent<SyncColor> ().myColor = c;

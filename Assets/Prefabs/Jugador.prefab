@@ -152,6 +152,10 @@ Prefab:
       propertyPath: creep
       value: 
       objectReference: {fileID: 130306, guid: 9aa4b8916e6244f6581d65eb87642020, type: 2}
+    - target: {fileID: 0}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 158748, guid: 2040037f13b9b41f49a6958fb0af34d5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 186930}
