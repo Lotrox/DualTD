@@ -73,7 +73,7 @@ public class TowerAttack : NetworkBehaviour {
 		if (enemyInRange.Count > 0)
 		{
 			GameObject g = enemyInRange [0];
-			if (g != null) 
+			if (!IsDestroyed(g)) 
 			{
 				TowerInfo ti = GetComponent<TowerInfo> ();
 				if (Time.realtimeSinceStartup > (lastHit + ti.speedAttack)) 
@@ -84,9 +84,12 @@ public class TowerAttack : NetworkBehaviour {
 						unit.health -= (int) ti.damagePerHit;
 					}
 					if (unit.health <= 0) {
+						SyncOwner syncOwner = GetComponent<SyncOwner> ();
+						PlayerId playerId = syncOwner.getOwner ().GetComponent<PlayerId> ();
+						playerId.GainMoney (unit.money);
+						Destroy (g);
 						--(((NetworkMan)NetworkMan.singleton).unitsAlive);
 						print ("Quedan " + (((NetworkMan)NetworkMan.singleton).unitsAlive) + " unidades vivas.");
-						Destroy (g);
 					}
 				}
 			}
