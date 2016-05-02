@@ -57,18 +57,17 @@ public class NetworkMan : NetworkManager {
 			{
 				if (!waveSpawned) 
 				{
-					waveTime = Time.realtimeSinceStartup;
-					spawnUnits ();
 					waveSpawned = true;
+					spawnUnits ();
 				}
-				if (waveFinished ()) 
-				{
-					waveTime = Time.realtimeSinceStartup;
-					waveSpawned = false;
-					// Descanso de 20 segundos.
-					A.GetComponent<NetworkRpc> ().RpcStandby ();
-					B.GetComponent<NetworkRpc> ().RpcStandby ();
-				}
+			}
+			if (waveFinished ()) 
+			{
+				waveTime = Time.realtimeSinceStartup;
+				waveSpawned = false;
+				// Descanso de 20 segundos.
+				A.GetComponent<NetworkRpc> ().RpcStandby ();
+				B.GetComponent<NetworkRpc> ().RpcStandby ();
 			}
 		}
 		else 
@@ -78,10 +77,10 @@ public class NetworkMan : NetworkManager {
 	}
 		
 	bool waveFinished() {
-		if (unitsAlive == 0)
+		if (unitsAlive <= 0)
 			print ("La oleada ha finalizado");
 		
-		return (unitsAlive == 0);
+		return (unitsAlive <= 0);
 	}
 		
 	void spawnUnits() {
