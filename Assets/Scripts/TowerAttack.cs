@@ -7,6 +7,7 @@ public class TowerAttack : NetworkBehaviour {
 
 	private List<GameObject> enemyInRange;
 	private float lastHit;
+	private bool recentlyPush;
 
 	void Start()
 	{
@@ -21,18 +22,17 @@ public class TowerAttack : NetworkBehaviour {
 
 		// Último golpe proporpocionado por la torre
 		lastHit = Time.realtimeSinceStartup;
+
+		// Torre recién puesta, lee OnTriggerStay
+		recentlyPush = true;
 	}
 
-	void OnTriggerEnter(Collider other)
-	{
-		if (!isServer)
-			return;
-		
+	void scanEnemies(Collider other) {
 		if (other.gameObject.tag.Equals("Enemigo"))
 		{
 			print ("Nuevo enemigo");
 			SyncOwner enemyOwner = other.gameObject.GetComponent<SyncOwner> (),
-					  towerOwner = GetComponent<SyncOwner> ();
+			towerOwner = GetComponent<SyncOwner> ();
 
 			if (enemyOwner != towerOwner)
 			{
@@ -41,6 +41,26 @@ public class TowerAttack : NetworkBehaviour {
 				enemyInRange.Add (other.gameObject);
 			}
 
+		}
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (!isServer)
+			return;
+		
+		scanEnemies (other);
+	}
+
+	void OnTriggerStay(Collider other) 
+	{
+		if (!isServer)
+		{
+			if (recentlyPush)
+			{
+				recentlyPush = false;
+				scanEnemies ();
+			}
 		}
 	}
 
