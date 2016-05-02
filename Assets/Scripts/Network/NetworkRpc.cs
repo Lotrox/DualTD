@@ -18,14 +18,17 @@ public class NetworkRpc : NetworkBehaviour {
 
 	[ClientRpc]
 	public void RpcStandby() {
-		print ("Ahora debo esperar 30 segundos.");
+		if (!isLocalPlayer)
+			print ("Ahora debo esperar 30 segundos.");
 	}
 
 	[ClientRpc]
-	public void RpcSpawnUnits(int wave) {
+	public void RpcSpawnUnits(int wave) 
+	{
+		if (!isLocalPlayer)
+			return;
+		
 		CmdSpawnUnits (gameObject, wave);
-		print ("Se han generado los súbditos para la oleada " + wave);
-		print ("Dicha oleada pertenece al " + gameObject.GetComponent<PlayerId> ().getId ());
 	}
 
 	[Command]
@@ -34,7 +37,7 @@ public class NetworkRpc : NetworkBehaviour {
 		for (int i = 0; i <= wave; ++i) 
 		{
 			PlayerId playerId = player.GetComponent<PlayerId> ();
-			print ("Spanw de unidad perteneciente al jugador " + playerId.getId ());
+			print ("Spawn de unidad perteneciente al jugador " + playerId.getId ());
 			creep.GetComponent<AgentScript> ().target = e[playerId.getId()];
 			GameObject instance = (GameObject)Instantiate (creep, s [playerId.getId ()].position, s [playerId.getId ()].rotation);
 
