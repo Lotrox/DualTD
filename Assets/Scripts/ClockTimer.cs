@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ClockTimer : MonoBehaviour {
 
-	float waveTime; // Trata sobre el tiempo desde que se inició la última oleada y/o en curso.
+	static float waveTime = 20; // Trata sobre el tiempo desde que se inició la última oleada y/o en curso.
 	Text t;
-	float timeWait = 20.0f;
+	static float timeWait = 20;
 
 	// Use this for initialization
 	void Start () {
@@ -16,15 +16,14 @@ public class ClockTimer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//if (Time.realtimeSinceStartup >= waveTime + 30.0f) {
-		if ((timeWait - Time.realtimeSinceStartup - waveTime) > 1){
+		if (((Time.realtimeSinceStartup - waveTime) < timeWait) && (Time.realtimeSinceStartup - waveTime) > 0.0f){
 			t.text = (timeWait - Time.realtimeSinceStartup - waveTime).ToString("F2") + " seg";
 			GameObject.FindGameObjectWithTag ("wave").GetComponent<Text>().text = t.text;
 		}
 	}
 
 	static public void updateTime(){
-			waveTime = Time.realtimeSinceStartup;
+		waveTime = Time.realtimeSinceStartup;
 	}
 
 
