@@ -20,7 +20,8 @@ public class NetworkRpc : NetworkBehaviour {
 	[ClientRpc]
 	public void RpcStandby() {
 		if (!isLocalPlayer)
-			print ("Ahora debo esperar 30 segundos.");
+			GameObject.FindGameObjectWithTag ("wave").GetComponent<Text> ().text = "20 seg ";
+			print ("Ahora debo esperar 20 segundos.");
 	}
 
 	[ClientRpc]

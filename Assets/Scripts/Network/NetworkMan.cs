@@ -53,7 +53,7 @@ public class NetworkMan : NetworkManager {
 	{
 		if (count >= 2) // Los 2 jugadores están en partida.
 		{
-			if (Time.realtimeSinceStartup >= waveTime + 30.0f)
+			if (Time.realtimeSinceStartup >= waveTime + 20.0f)
 			{
 				if (!waveSpawned) 
 				{
@@ -65,7 +65,7 @@ public class NetworkMan : NetworkManager {
 				{
 					waveTime = Time.realtimeSinceStartup;
 					waveSpawned = false;
-					// Descanso de 30 segundos.
+					// Descanso de 20 segundos.
 					A.GetComponent<NetworkRpc> ().RpcStandby ();
 					B.GetComponent<NetworkRpc> ().RpcStandby ();
 				}
