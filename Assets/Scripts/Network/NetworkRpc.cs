@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Collections;
 
@@ -23,7 +24,10 @@ public class NetworkRpc : NetworkBehaviour {
 
 	[ClientRpc]
 	public void RpcSpawnUnits(int wave) {
+		if (!isLocalPlayer)
+			return;
 		CmdSpawnUnits (gameObject, wave);
+		GameObject.FindGameObjectWithTag ("wave").GetComponent<Text> ().text = "Oleada " + wave;
 		print ("Se han generado los súbditos para la oleada " + wave);
 		print ("Dicha oleada pertenece al " + gameObject.GetComponent<PlayerId> ().getId ());
 	}
