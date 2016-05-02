@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ClockTimer : MonoBehaviour {
 
-	float waveTime; // Trata sobre el tiempo desde que se inició la última oleada y/o en curso.
+	static float waveTime; // Trata sobre el tiempo desde que se inició la última oleada y/o en curso.
 	Text t;
-	float timeWait = 20.0f;
+	static float timeWait = 20.0f;
 
 	// Use this for initialization
 	void Start () {

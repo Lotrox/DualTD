@@ -11,7 +11,7 @@ public class NetworkMan : NetworkManager {
 	float globalTime, // Trata sobre el tiempo global desde que se inició la partida.
 	      waveTime; // Trata sobre el tiempo desde que se inició la última oleada y/o en curso.
 
-	GameObject A, B; // Jugadores 1 y 2.
+	public GameObject A, B; // Jugadores 1 y 2.
 	public int unitsAlive = 0; // Unidades vivas en una oleada.
 
 	// https://github.com/fholm/unityassets/blob/master/VoiceChat/Assets/VoiceChat/Scripts/Demo/HLAPI/VoiceChatNetworkManager.cs
