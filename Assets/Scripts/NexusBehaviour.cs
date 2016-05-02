@@ -25,7 +25,7 @@ public class NexusBehaviour : NetworkBehaviour {
 				   B = (((NetworkMan)NetworkMan.singleton).B);
 		PlayerId playerId = null;
 
-		UnitInfo unit = other.GetComponent<UnitInfo> ();
+		/*UnitInfo unit = other.GetComponent<UnitInfo> ();
 		SyncOwner syncOwner = other.GetComponent<SyncOwner> ();
 
 		if (syncOwner.getOwner () != A) 
@@ -35,9 +35,9 @@ public class NexusBehaviour : NetworkBehaviour {
 		else 
 		{
 			playerId = B.GetComponent<PlayerId> ();
-		} 
+		} */
 
-		playerId.TakeDamage (unit.damage);
-		NetworkServer.Destroy (other.gameObject);
+		//playerId.TakeDamage (unit.damage);
+		NetworkServer.UnSpawn (other.gameObject);
 	}
 }

@@ -6970,6 +6970,8 @@ GameObject:
   - 23: {fileID: 601678137}
   - 114: {fileID: 601678140}
   - 114: {fileID: 601678141}
+  - 65: {fileID: 601678143}
+  - 54: {fileID: 601678142}
   m_Layer: 8
   m_Name: Objetivo
   m_TagString: E2
@@ -7064,8 +7066,8 @@ MonoBehaviour:
     i13: 0
     i14: 0
     i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
+  m_ServerOnly: 1
+  m_LocalPlayerAuthority: 0
 --- !u!114 &601678141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7077,6 +7079,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1564be6c2a6184b03944ca32df493f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &601678142
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 601678135}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &601678143
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 601678135}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &605317329
 Prefab:
   m_ObjectHideFlags: 0
@@ -23305,6 +23334,8 @@ GameObject:
   - 23: {fileID: 1898631017}
   - 114: {fileID: 1898631020}
   - 114: {fileID: 1898631021}
+  - 65: {fileID: 1898631023}
+  - 54: {fileID: 1898631022}
   m_Layer: 8
   m_Name: Objetivo
   m_TagString: E1
@@ -23399,8 +23430,8 @@ MonoBehaviour:
     i13: 0
     i14: 0
     i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
+  m_ServerOnly: 1
+  m_LocalPlayerAuthority: 0
 --- !u!114 &1898631021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23412,6 +23443,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1564be6c2a6184b03944ca32df493f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &1898631022
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1898631015}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1898631023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1898631015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.0000038146973, y: 0, z: 0}
 --- !u!1 &1900517716
 GameObject:
   m_ObjectHideFlags: 0
