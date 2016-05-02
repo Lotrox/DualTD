@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 10
   range: 10
-  damagePerHit: 8
+  damagePerHit: 1
   damagePerArea: 0
   speedAttack: 1
 --- !u!114 &11438516
@@ -405,6 +405,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speedAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damagePerHit
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

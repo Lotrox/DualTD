@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 using System.Collections;
 
 public class NetworkRpc : NetworkBehaviour {
@@ -24,18 +25,21 @@ public class NetworkRpc : NetworkBehaviour {
 
 	[ClientRpc]
 	public void RpcStandby() {
+		GameObject.FindGameObjectWithTag ("wave").GetComponent<Text>().text = "30 seg";
 		print ("Ahora debo esperar 30 segundos.");
 	}
 
 	[ClientRpc]
 	public void RpcSpawnUnits(int wave) {
 		CmdSpawnUnits (gameObject, wave);
+		GameObject.FindGameObjectWithTag ("wave").GetComponent<Text>().text = "Oleada " + wave ;
 		print ("Se han generado los súbditos para la oleada " + wave);
 	}
 
 	[Command]
 	public void CmdSpawnUnits(GameObject player, int wave) 
 	{
+		
 		for (int i = 0; i <= wave; ++i) 
 		{
 			PlayerId playerId = player.GetComponent<PlayerId> ();

@@ -13,6 +13,7 @@ TagManager:
   - E2
   - hp_j1
   - hp_j2
+  - wave
   layers:
   - Default
   - TransparentFX
