@@ -42,7 +42,8 @@ public class NetworkMan : NetworkManager {
 				B = player;
 				waveTime = globalTime = Time.realtimeSinceStartup;
 				print ("Ha comenzado la partida");
-				NetworkRpc.getInstance ().RpcStandby ();
+				A.GetComponent<NetworkRpc> ().RpcStandby ();
+				B.GetComponent<NetworkRpc> ().RpcStandby ();
 			}
 		}
 		++count;
@@ -65,7 +66,8 @@ public class NetworkMan : NetworkManager {
 					waveTime = Time.realtimeSinceStartup;
 					waveSpawned = false;
 					// Descanso de 30 segundos.
-					NetworkRpc.getInstance().RpcStandby();
+					A.GetComponent<NetworkRpc> ().RpcStandby ();
+					B.GetComponent<NetworkRpc> ().RpcStandby ();
 				}
 			}
 		}
@@ -86,7 +88,8 @@ public class NetworkMan : NetworkManager {
 		++wave;
 
 		// El servidor notifica que los jugadores van a crear unidades. (Necesita su autoridad).
-		NetworkRpc.getInstance ().RpcSpawnUnits (wave);
+		A.GetComponent<NetworkRpc> ().RpcSpawnUnits (wave);
+		B.GetComponent<NetworkRpc> ().RpcSpawnUnits (wave);
 	}
 		
 }

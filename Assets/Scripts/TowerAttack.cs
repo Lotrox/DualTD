@@ -30,14 +30,12 @@ public class TowerAttack : NetworkBehaviour {
 	void scanEnemies(Collider other) {
 		if (other.gameObject.tag.Equals("Enemigo"))
 		{
-			print ("Nuevo enemigo");
 			SyncOwner enemyOwner = other.gameObject.GetComponent<SyncOwner> (),
 			towerOwner = GetComponent<SyncOwner> ();
 
 			if (enemyOwner.getOwner() != towerOwner.getOwner())
 			{
-				print ("Adversario");
-				UnitInfo unit = other.gameObject.GetComponent<UnitInfo> ();
+				print ("Nuevo enemigo");
 				enemyInRange.Add (other.gameObject);
 			}
 
