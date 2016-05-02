@@ -22,11 +22,11 @@ public class NexusBehaviour : NetworkBehaviour {
 			print ("Enter enter");
 
 			GameObject A = (((NetworkMan)NetworkMan.singleton).A),
-			B = (((NetworkMan)NetworkMan.singleton).B);
+					   B = (((NetworkMan)NetworkMan.singleton).B);
 			PlayerId playerId = null;
 
-			/*UnitInfo unit = other.GetComponent<UnitInfo> ();
-			SyncOwner syncOwner = other.GetComponent<SyncOwner> ();
+			UnitInfo unit = other.gameObject.GetComponent<UnitInfo> ();
+			SyncOwner syncOwner = other.gameObject.GetComponent<SyncOwner> ();
 
 			if (syncOwner.getOwner () != A) 
 			{
@@ -35,10 +35,11 @@ public class NexusBehaviour : NetworkBehaviour {
 			else 
 			{
 				playerId = B.GetComponent<PlayerId> ();
-			} */
+			} 
 
-			//playerId.TakeDamage (unit.damage);
+			playerId.TakeDamage (unit.damage);
 			Destroy(other.gameObject);
+			--(((NetworkMan)NetworkMan.singleton).unitsAlive);
 		}
 	}
 }

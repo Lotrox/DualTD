@@ -16,8 +16,8 @@ public class ClockTimer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (((Time.realtimeSinceStartup - waveTime) < timeWait) && (Time.realtimeSinceStartup - waveTime) > 0.0f){
-			t.text = (Time.realtimeSinceStartup - waveTime).ToString("F2") + " seg";
+		if (((Time.realtimeSinceStartup - waveTime) < timeWait - 0.5f) && (Time.realtimeSinceStartup - waveTime) > 0.0f){
+			t.text = (timeWait - Time.realtimeSinceStartup - waveTime).ToString("F2") + " seg";
 			GameObject.FindGameObjectWithTag ("wave").GetComponent<Text>().text = t.text;
 		}
 	}
