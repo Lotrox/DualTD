@@ -18,7 +18,7 @@ public class NexusBehaviour : NetworkBehaviour {
 	{
 		if (!isServer)
 			return;
-		if (other.tag == GameObject.FindGameObjectWithTag ("enemigo")) {
+		if (other.tag == "Enemigo") {
 			print ("Enter enter");
 
 			GameObject A = (((NetworkMan)NetworkMan.singleton).A),
@@ -38,7 +38,7 @@ public class NexusBehaviour : NetworkBehaviour {
 			} */
 
 			//playerId.TakeDamage (unit.damage);
-			Destroy (other.gameObject);
+			Destroy(other.gameObject);
 		}
 	}
 }
