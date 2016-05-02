@@ -57,17 +57,18 @@ public class NetworkMan : NetworkManager {
 			{
 				if (!waveSpawned) 
 				{
-					waveSpawned = true;
+					waveTime = Time.realtimeSinceStartup;
 					spawnUnits ();
+					waveSpawned = true;
 				}
-			}
-			if (waveFinished ()) 
-			{
-				waveTime = Time.realtimeSinceStartup;
-				waveSpawned = false;
-				// Descanso de 20 segundos.
-				A.GetComponent<NetworkRpc> ().RpcStandby ();
-				B.GetComponent<NetworkRpc> ().RpcStandby ();
+				if (waveFinished ()) 
+				{
+					waveTime = Time.realtimeSinceStartup;
+					waveSpawned = false;
+					// Descanso de 20 segundos.
+					A.GetComponent<NetworkRpc> ().RpcStandby ();
+					B.GetComponent<NetworkRpc> ().RpcStandby ();
+				}
 			}
 		}
 		else 
