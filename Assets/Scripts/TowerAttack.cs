@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class TowerAttack : NetworkBehaviour {
 
 	private List<GameObject> enemyInRange;
-	public GameObject enemy;
+	private float lastHit;
 
 	void Start()
 	{
@@ -18,6 +18,9 @@ public class TowerAttack : NetworkBehaviour {
 		SphereCollider sc = GetComponent<SphereCollider> ();
 		sc.radius = (float) ti.range;
 		sc.isTrigger = true;
+
+		// Último golpe proporpocionado por la torre
+		lastHit = Time.realtimeSinceStartup;
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -57,25 +60,37 @@ public class TowerAttack : NetworkBehaviour {
 		if (!isServer)
 			return;
 
-		// Los enemigos abatidos son eliminados de la lista<.
+		// Los enemigos abatidos son eliminados de la lista.
 		List<GameObject> toDelete = new List<GameObject> ();
 		foreach (GameObject g in enemyInRange) 
 		{
 			if (IsDestroyed (g))
 				toDelete.Add (g);
-			else 
+		}
+		enemyInRange.RemoveAll (x => toDelete.Contains(x));
+
+		// Ataca al primer enemigo que se encuentre en la lista.
+		if (enemyInRange.Count > 0)
+		{
+			GameObject g = enemyInRange [0];
+			if (g != null) 
 			{
-				UnitInfo unit = g.GetComponent<UnitInfo> ();
-				if (unit.health > 0) {
-					--unit.health;
-				} else {
-					--(((NetworkMan) NetworkMan.singleton).unitsAlive);
-					print ("Quedan " + (((NetworkMan)NetworkMan.singleton).unitsAlive) + " unidades vivas.");
-					Destroy (g);
+				TowerInfo ti = GetComponent<TowerInfo> ();
+				if (Time.realtimeSinceStartup > (lastHit + ti.speedAttack)) 
+				{
+					UnitInfo unit = g.GetComponent<UnitInfo> ();
+					if (unit.health > 0) {
+						lastHit = Time.realtimeSinceStartup;
+						unit.health -= (int) ti.damagePerHit;
+					}
+					if (unit.health <= 0) {
+						--(((NetworkMan)NetworkMan.singleton).unitsAlive);
+						print ("Quedan " + (((NetworkMan)NetworkMan.singleton).unitsAlive) + " unidades vivas.");
+						Destroy (g);
+					}
 				}
 			}
 		}
-		enemyInRange.RemoveAll (x => toDelete.Contains(x));
 	}
 		
 
