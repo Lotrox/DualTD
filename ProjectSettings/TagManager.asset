@@ -11,6 +11,8 @@ TagManager:
   - E1
   - S2
   - E2
+  - hp_j1
+  - hp_j2
   layers:
   - Default
   - TransparentFX

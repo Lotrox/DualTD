@@ -81,7 +81,8 @@ public class TowerSpawner : NetworkBehaviour {
 			instance.GetComponent<SyncOwner> ().setOwner (player);
 			//instance.GetComponent<SyncColor> ().myColor = c;
 			playerId.GainMoney (-towerInfo.cost);
-			playerId.TakeDamage ((int)towerInfo.damagePerHit);
+			//playerId.TakeDamage (10);
+			//playerId.TakeDamage ((int)towerInfo.damagePerHit);
 
 			NetworkServer.SpawnWithClientAuthority (instance, base.connectionToClient);
 

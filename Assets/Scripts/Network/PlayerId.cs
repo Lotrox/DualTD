@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerId : NetworkBehaviour {
@@ -20,10 +21,10 @@ public class PlayerId : NetworkBehaviour {
 	Color c;
 
 	[SyncVar(hook = "hook_health")]
-	public int health = 150;
+	public int health = 100;
 
 	[SyncVar(hook = "hook_money")]
-	public int money = 100;
+	public int money = 50;
 
 	// Asignación de la cámara al inicio de la partida.
 	// Para la asignación, se considera el Id del jugador.
@@ -109,6 +110,10 @@ public class PlayerId : NetworkBehaviour {
 	}
 
 	void hook_health(int _health) {
+		if(isLocalPlayer)
+			GameObject.FindGameObjectWithTag ("hp_j1").GetComponent<Slider>().value -= 10;
+		else
+			GameObject.FindGameObjectWithTag ("hp_j2").GetComponent<Slider>().value -= 10;
 		if (DEBUG)
 			print ("Vida actual: " + _health);
 	}
