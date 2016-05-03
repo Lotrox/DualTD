@@ -110,10 +110,15 @@ public class PlayerId : NetworkBehaviour {
 	}
 
 	void hook_health(int _health) {
-		if(isLocalPlayer)
-			GameObject.FindGameObjectWithTag ("hp_j1").GetComponent<Slider>().value = _health;
-		else
-			GameObject.FindGameObjectWithTag ("hp_j2").GetComponent<Slider>().value = _health;
+		if (isLocalPlayer) 
+		{
+			dec_hp1 += old_hp1 -_health;
+			old_hp1 = _health;
+		} else 
+		{
+			dec_hp2 += old_hp2 - _health;
+			old_hp2 = _health;
+		}
 		if (DEBUG)
 			print ("Vida actual: " + _health);
 	}
@@ -121,5 +126,24 @@ public class PlayerId : NetworkBehaviour {
 	void hook_money(int _money) {
 		if (DEBUG)
 			print ("Dinero actual: " + _money);
+	}
+
+	int dec_hp1 = 0;
+	int dec_hp2 = 0;
+
+	int old_hp1 = 100;
+	int old_hp2 = 100;
+
+	void Update(){
+		if (dec_hp1 > 0) 
+		{
+			--(GameObject.FindGameObjectWithTag ("hp_j1").GetComponent<Slider> ().value);
+			--dec_hp1;
+		}
+		if (dec_hp2 > 0) 
+		{
+			--(GameObject.FindGameObjectWithTag ("hp_j2").GetComponent<Slider> ().value);
+			--dec_hp2;
+		}
 	}
 }
