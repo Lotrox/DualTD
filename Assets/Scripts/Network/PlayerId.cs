@@ -111,9 +111,9 @@ public class PlayerId : NetworkBehaviour {
 
 	void hook_health(int _health) {
 		if(isLocalPlayer)
-			GameObject.FindGameObjectWithTag ("hp_j1").GetComponent<Slider>().value = health;
+			GameObject.FindGameObjectWithTag ("hp_j1").GetComponent<Slider>().value = _health;
 		else
-			GameObject.FindGameObjectWithTag ("hp_j2").GetComponent<Slider>().value = health;
+			GameObject.FindGameObjectWithTag ("hp_j2").GetComponent<Slider>().value = _health;
 		if (DEBUG)
 			print ("Vida actual: " + _health);
 	}
