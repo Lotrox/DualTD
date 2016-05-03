@@ -77,7 +77,6 @@ public class TowerAttack : NetworkBehaviour {
 	{
 		if (!isServer)
 			return;
-
 		// Los enemigos abatidos son eliminados de la lista.
 		List<GameObject> toDelete = new List<GameObject> ();
 		foreach (GameObject g in enemyInRange) 
