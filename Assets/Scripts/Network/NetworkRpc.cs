@@ -52,19 +52,28 @@ public class NetworkRpc : NetworkBehaviour {
 	}
 
 	[ClientRpc]
-	public void RpcNexusUnspawnCrystal(GameObject player, GameObject nexus) 
+	public void RpcNexusUnspawnCrystal(int id, int health) 
 	{
-		int h = player.GetComponent<PlayerId> ().health;
-		for (int i = 90; i >= 0; i -= 10) {
-			if (h <= i) {
-				GameObject b = nexus.transform.parent.FindChild("Crystal_" + i).gameObject;
-				b.SetActive (false);
+		if (!isLocalPlayer)
+			return;
+
+		GameObject nexus = GameObject.Find ("/Modelos/Nexo_J" + (id + 1));
+
+		for (int i = 90; i >= 0; i -= 10) 
+		{
+			if (health <= i) 
+			{
+				nexus.transform.FindChild("Crystal_" + i).gameObject.SetActive (false);
 			}
 		}
-		if (h == 0) 
+		if (health <= 0) 
 		{
-			GameObject b = nexus.transform.parent.FindChild("Luces").gameObject;
-			b.SetActive (false);
+			nexus.transform.FindChild ("Luces").gameObject.SetActive (false);
 		}
+	}
+
+	[ClientRpc]
+	public void RpcWinByDisconnection() {
+		print ("Has ganado!!!!");
 	}
 }

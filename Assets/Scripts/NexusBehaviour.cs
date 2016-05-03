@@ -20,7 +20,6 @@ public class NexusBehaviour : NetworkBehaviour {
 			return;
 		if (other.tag == "Enemigo") 
 		{
-			
 			GameObject A = (((NetworkMan)NetworkMan.singleton).A),
 					   B = (((NetworkMan)NetworkMan.singleton).B);
 			PlayerId playerId = null;
@@ -43,8 +42,8 @@ public class NexusBehaviour : NetworkBehaviour {
 			--(((NetworkMan)NetworkMan.singleton).unitsAlive);
 
 			// Rotura de fragmentos.
-			A.GetComponent<NetworkRpc> ().RpcNexusUnspawnCrystal (playerId.gameObject, gameObject);
-			B.GetComponent<NetworkRpc> ().RpcNexusUnspawnCrystal (playerId.gameObject, gameObject);
+			A.GetComponent<NetworkRpc> ().RpcNexusUnspawnCrystal (playerId.getId(), playerId.health);
+			B.GetComponent<NetworkRpc> ().RpcNexusUnspawnCrystal (playerId.getId(), playerId.health);
 		}
 	}
 }
