@@ -30,6 +30,10 @@ public class TowerAttack : NetworkBehaviour {
 		recentlyPush = true;
 	}
 
+	public void PlaySound(){
+		aSour.PlayOneShot (aClip, 0.5f);
+	}
+
 	void scanEnemies(Collider other) {
 		if (other.gameObject.tag.Equals("Enemigo"))
 		{
@@ -78,8 +82,6 @@ public class TowerAttack : NetworkBehaviour {
 
 	void Update() 
 	{
-		if (!isServer)
-			return;
 		// Los enemigos abatidos son eliminados de la lista.
 		List<GameObject> toDelete = new List<GameObject> ();
 		foreach (GameObject g in enemyInRange) 
@@ -102,7 +104,7 @@ public class TowerAttack : NetworkBehaviour {
 					if (unit.health > 0) {
 						lastHit = Time.realtimeSinceStartup;
 						gameObject.transform.GetChild(1).transform.LookAt(g.transform);
-						aSour.PlayOneShot (aClip, 0.5f);
+						RpcSound ();
 						unit.health -= (int) ti.damagePerHit;
 					}
 					if (unit.health <= 0) {
@@ -116,6 +118,16 @@ public class TowerAttack : NetworkBehaviour {
 				}
 			}
 		}
+	}
+
+	public void RpcSound(){
+		GameObject A = (((NetworkMan)NetworkMan.singleton).A),
+			       B = (((NetworkMan)NetworkMan.singleton).B);
+
+		// Rotura de fragmentos.
+		A.GetComponent<NetworkRpc> ().RpcSoundTowerAttack (gameObject);
+		B.GetComponent<NetworkRpc> ().RpcSoundTowerAttack (gameObject);
+
 	}
 		
 

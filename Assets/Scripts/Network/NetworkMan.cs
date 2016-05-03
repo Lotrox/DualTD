@@ -15,6 +15,7 @@ public class NetworkMan : NetworkManager {
 	public GameObject A, B; // Jugadores 1 y 2.
 	private NetworkConnection Ac, Bc;
 	public int unitsAlive = 0; // Unidades vivas en una oleada.
+	bool firstWave = true;
 
 	// https://github.com/fholm/unityassets/blob/master/VoiceChat/Assets/VoiceChat/Scripts/Demo/HLAPI/VoiceChatNetworkManager.cs
 	// http://docs.unity3d.com/Manual/UNetPlayers.html (OnServerAddPlayer)
@@ -62,6 +63,13 @@ public class NetworkMan : NetworkManager {
 	{
 		if (count >= 2) // Los 2 jugadores están en partida.
 		{
+			if (firstWave) 
+			{
+				firstWave = !firstWave;
+				A.GetComponent<PlayerId> ().GainMoney (50);
+				B.GetComponent<PlayerId> ().GainMoney (50);
+			}
+				
 			if (!waveSpawned) 
 			{
 				if (Time.realtimeSinceStartup >= waveTime + 20.0f)
