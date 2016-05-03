@@ -43,8 +43,8 @@ public class NexusBehaviour : NetworkBehaviour {
 			--(((NetworkMan)NetworkMan.singleton).unitsAlive);
 
 			// Rotura de fragmentos.
-			A.GetComponent<NetworkRpc> ().RpcNexusUnspawnCrystal (playerId.gameObject);
-			B.GetComponent<NetworkRpc> ().RpcNexusUnspawnCrystal (playerId.gameObject);
+			A.GetComponent<NetworkRpc> ().RpcNexusUnspawnCrystal (playerId.gameObject, gameObject);
+			B.GetComponent<NetworkRpc> ().RpcNexusUnspawnCrystal (playerId.gameObject, gameObject);
 		}
 	}
 }

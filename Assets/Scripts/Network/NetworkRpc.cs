@@ -52,18 +52,18 @@ public class NetworkRpc : NetworkBehaviour {
 	}
 
 	[ClientRpc]
-	public void RpcNexusUnspawnCrystal(GameObject player) 
+	public void RpcNexusUnspawnCrystal(GameObject player, GameObject nexus) 
 	{
-		int h = player.GetComponent<Health> ().getHealth();
+		int h = player.GetComponent<PlayerId> ().health;
 		for (int i = 90; i >= 0; i -= 10) {
 			if (h <= i) {
-				GameObject b = gameObject.transform.parent.FindChild("Crystal_" + i).gameObject;
+				GameObject b = nexus.transform.parent.FindChild("Crystal_" + i).gameObject;
 				b.SetActive (false);
 			}
 		}
 		if (h == 0) 
 		{
-			GameObject b = gameObject.transform.parent.FindChild("Luces").gameObject;
+			GameObject b = nexus.transform.parent.FindChild("Luces").gameObject;
 			b.SetActive (false);
 		}
 	}
