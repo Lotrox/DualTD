@@ -17,6 +17,12 @@ public class ClockTimer : MonoBehaviour {
 	void Start () {
 		aSour = GetComponent<AudioSource> ();
 		t = GetComponent<Text> ();
+
+		t.text = "Esperando...";
+		aSour.Stop ();
+		waveTime = -20;
+		music = false;
+		turningOff = false;
 	}
 
 	// Update is called once per frame

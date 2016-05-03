@@ -74,6 +74,8 @@ public class NetworkRpc : NetworkBehaviour {
 
 	[ClientRpc]
 	public void RpcWinByDisconnection() {
-		print ("Has ganado!!!!");
+		print ("Tu rival se ha desconectado, por lo tanto, se te autodeclara victoria.");
+		//Network.Disconnect();
+		//MasterServer.UnregisterHost();
 	}
 }

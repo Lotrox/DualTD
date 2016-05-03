@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class NetworkMan : NetworkManager {
 
@@ -12,6 +13,7 @@ public class NetworkMan : NetworkManager {
 	      waveTime; // Trata sobre el tiempo desde que se inició la última oleada y/o en curso.
 
 	public GameObject A, B; // Jugadores 1 y 2.
+	private NetworkConnection Ac, Bc;
 	public int unitsAlive = 0; // Unidades vivas en una oleada.
 
 	// https://github.com/fholm/unityassets/blob/master/VoiceChat/Assets/VoiceChat/Scripts/Demo/HLAPI/VoiceChatNetworkManager.cs
@@ -22,6 +24,11 @@ public class NetworkMan : NetworkManager {
 	{
 		base.OnServerDisconnect (conn);
 		--count;
+		if (Ac == conn)
+			B.GetComponent<NetworkRpc> ().RpcWinByDisconnection ();
+		if (Bc == conn)
+			A.GetComponent<NetworkRpc> ().RpcWinByDisconnection ();
+		SceneManager.LoadScene ("main");
 		//NetworkRPC.getInstance().RpcPlayerDisconnect (); // Informar de una desconexión.
 	}
 
@@ -36,10 +43,12 @@ public class NetworkMan : NetworkManager {
 			if (count == 0) 
 			{
 				A = player;
+				Ac = conn;
 			} 
 			else 
 			{
 				B = player;
+				Bc = conn;
 				waveTime = globalTime = Time.realtimeSinceStartup;
 				print ("Ha comenzado la partida");
 				A.GetComponent<NetworkRpc> ().RpcStandby ();
@@ -60,7 +69,8 @@ public class NetworkMan : NetworkManager {
 					spawnUnits ();
 					waveSpawned = true;
 				}
-			}else if (waveFinished ()) 
+			}
+			else if (waveFinished ()) 
 			{
 				waveTime = Time.realtimeSinceStartup;
 				waveSpawned = false;
