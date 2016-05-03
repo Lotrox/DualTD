@@ -84,7 +84,7 @@ public class TowerSpawner : NetworkBehaviour {
 			//playerId.TakeDamage (10);
 			//playerId.TakeDamage ((int)towerInfo.damagePerHit);
 
-			NetworkServer.SpawnWithClientAuthority (instance, base.connectionToClient);
+			NetworkServer.Spawn(instance);
 
 			msg = TowerCase.PushConfirm;
 		} 

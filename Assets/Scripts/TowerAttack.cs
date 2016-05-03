@@ -8,9 +8,12 @@ public class TowerAttack : NetworkBehaviour {
 	private List<GameObject> enemyInRange;
 	private float lastHit;
 	private bool recentlyPush;
+	public AudioClip aClip;
+	private AudioSource aSour;
 
 	void Start()
 	{
+		aSour = GetComponent<AudioSource> ();
 		// Contiene a los enemigos.
 		enemyInRange = new List<GameObject>();
 
@@ -98,7 +101,8 @@ public class TowerAttack : NetworkBehaviour {
 					UnitInfo unit = g.GetComponent<UnitInfo> ();
 					if (unit.health > 0) {
 						lastHit = Time.realtimeSinceStartup;
-						gameObject.transform.LookAt(g.transform);
+						gameObject.transform.GetChild(1).transform.LookAt(g.transform);
+						aSour.PlayOneShot (aClip, 0.5f);
 						unit.health -= (int) ti.damagePerHit;
 					}
 					if (unit.health <= 0) {
