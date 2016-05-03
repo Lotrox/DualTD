@@ -73,6 +73,12 @@ public class NetworkRpc : NetworkBehaviour {
 	}
 
 	[ClientRpc]
+	public void RpcSoundTowerAttack(GameObject go){
+		go.GetComponent<TowerAttack>().PlaySound ();
+	
+	}
+
+	[ClientRpc]
 	public void RpcWinByDisconnection() {
 		print ("Has ganado!!!!");
 	}

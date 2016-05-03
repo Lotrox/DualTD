@@ -124,6 +124,10 @@ public class PlayerId : NetworkBehaviour {
 	}
 
 	void hook_money(int _money) {
+		if (isLocalPlayer) 
+		{
+			GameObject.FindGameObjectWithTag ("money").GetComponent<Text>().text = _money.ToString();
+		}
 		if (DEBUG)
 			print ("Dinero actual: " + _money);
 	}

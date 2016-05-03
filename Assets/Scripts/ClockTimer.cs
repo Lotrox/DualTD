@@ -10,6 +10,7 @@ public class ClockTimer : MonoBehaviour {
 	static float waveTime = -20; // Trata sobre el tiempo desde que se inició la última oleada y/o en curso.
 	Text t;
 	static float timeWait = 20;
+	static int numWave = 0;
 	static bool music = false;
 	static bool turningOff = false;
 
@@ -34,10 +35,12 @@ public class ClockTimer : MonoBehaviour {
 		} else {
 			if (music) {
 				print ("Reproduciendo música de oleada");
+				++numWave;
 				aSour.volume = 0.5f;
 				aSour.PlayOneShot (aClip, 0.5f);
 				music = false;
 			}
+			GameObject.FindGameObjectWithTag ("wave").GetComponent<Text> ().text = "Oleada " + numWave;
 		}
 		turnOffMusic ();
 	}
