@@ -143,8 +143,4 @@ Material:
       data:
         first:
           name: _TintColor
-<<<<<<< HEAD
         second: {r: 1, g: 1, b: 1, a: 0.13368323}
-=======
-        second: {r: 1, g: 1, b: 1, a: 0.06703201}
->>>>>>> 306632ef77e2dcb2856b5a27e240d689c5ffd155
