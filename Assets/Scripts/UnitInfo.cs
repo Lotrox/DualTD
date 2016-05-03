@@ -12,6 +12,6 @@ public class UnitInfo : MonoBehaviour {
 	void Start() {
 		NavMeshAgent nma = GetComponent<NavMeshAgent> ();
 		nma.speed = speed;
-		nma.acceleration = speed / 10.0f;
+		nma.acceleration = 5;
 	}
 }
