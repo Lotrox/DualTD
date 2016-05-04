@@ -3966,7 +3966,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 339236430}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1858012733}
+        m_MethodName: swapMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &339236430
@@ -15788,6 +15799,7 @@ GameObject:
   - 222: {fileID: 1261969160}
   - 114: {fileID: 1261969159}
   - 114: {fileID: 1261969164}
+  - 114: {fileID: 1261969165}
   m_Layer: 5
   m_Name: Torre_basica
   m_TagString: Untagged
@@ -15940,9 +15952,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1261969159}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1261969165}
+        m_MethodName: changeTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1261969165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1261969157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 196b9508debb042379ff9c6b48a5bebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 137752, guid: ed8ad73abd6919b49a7c93d79e9ef01d, type: 2}
 --- !u!1 &1272389677
 GameObject:
   m_ObjectHideFlags: 0
@@ -23763,6 +23798,7 @@ GameObject:
   - 223: {fileID: 1858012731}
   - 114: {fileID: 1858012730}
   - 114: {fileID: 1858012729}
+  - 114: {fileID: 1858012733}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -23847,6 +23883,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1858012733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1858012728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db43562e4c56b054ab953c6f5472361a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1868141432
 GameObject:
   m_ObjectHideFlags: 0

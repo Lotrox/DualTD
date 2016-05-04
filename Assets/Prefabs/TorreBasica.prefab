@@ -67,7 +67,7 @@ GameObject:
   - 114: {fileID: 11494790}
   - 82: {fileID: 8237888}
   m_Layer: 2
-  m_Name: TorreBallesta
+  m_Name: TorreBasica
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
