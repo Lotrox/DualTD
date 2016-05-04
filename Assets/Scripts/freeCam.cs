@@ -16,6 +16,20 @@ public class freeCam : MonoBehaviour {
 
 	private bool playerOne = true; // Booleano que nos indica si este jugador es el 1 o no.
 
+	public Texture2D normalCursor;
+	public Texture2D aimCursor;
+	private Vector2 hotSpot = Vector2.zero;
+
+	void Start() {
+		set_aimCursor (false);
+	}
+
+	public void set_aimCursor(bool b){
+		if(b)
+			Cursor.SetCursor(aimCursor, hotSpot, CursorMode.Auto);
+		else
+			Cursor.SetCursor(normalCursor, hotSpot, CursorMode.Auto);
+	}
 
 	void Update () {
 		if (!ClockTimer.updateable)
