@@ -5,7 +5,8 @@ using UnityEngine.Networking.NetworkSystem;
 
 public class TowerSpawner : NetworkBehaviour {
 
-	public static GameObject tower = null;
+	public static GameObject tower = null; // Torre seleccionada por el jugador.
+	public GameObject[] towers = new GameObject[10]; // Estructura de torres usada por el servidor.
 	GameObject selection;
 
 	enum TowerCase {
@@ -94,29 +95,20 @@ public class TowerSpawner : NetworkBehaviour {
 				TowerBase (TowerCase.RejectOut);
 				return;
 			}
-			print ("CLIENT TOWER:" + tower.name);
-			CmdupdateTower (tower);
-			CmdSpawn (hit.point, playerId.gameObject, collider); // Lo llaman los clientes!
+			CmdSpawn (hit.point, playerId.gameObject, collider, tower.GetComponent<TowerInfo>().id); // Lo llaman los clientes!
 		}
 	}
-
-	[Command]
-	void CmdupdateTower(GameObject towerSpawn){
-		print ("UPDATE TOWER:" + tower.name);
-		tower = towerSpawn;
-	}
-
+		
 	// Lo ejecuta el servidor!
 	[Command]
-	void CmdSpawn(Vector3 point, GameObject player, GameObject collider)
+	void CmdSpawn(Vector3 point, GameObject player, GameObject collider, int id)
 	{
 		PlayerId playerId = player.GetComponent<PlayerId> ();
-		print ("SPAWN TOWER:" +tower.name);
-		TowerInfo towerInfo = tower.GetComponent<TowerInfo> ();
+		TowerInfo towerInfo = towers[id].GetComponent<TowerInfo> ();
 		TowerCase msg;
 
 		if (playerId.money >= towerInfo.cost) {
-			GameObject instance = (GameObject)Instantiate (tower, collider.transform.position, collider.transform.rotation);
+			GameObject instance = (GameObject)Instantiate (towers[id], collider.transform.position, collider.transform.rotation);
 			instance.GetComponent<SyncTowerBase> ().setTowerBase (collider).deactivate ();
 			instance.GetComponent<SyncOwner> ().setOwner (player);
 			//instance.GetComponent<SyncColor> ().myColor = c;
