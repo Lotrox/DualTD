@@ -45,18 +45,26 @@ public class TowerSpawner : NetworkBehaviour {
 		};
 	}
 
+	[ClientCallback]
 	void Start() {
-		GameObject.Find("/Modelos").transform.Find("CasillasJ1").gameObject.SetActive (false);
-		GameObject.Find("/Modelos").transform.Find("CasillasJ2").gameObject.SetActive (false);
+		if (!isLocalPlayer)
+			return;
+		
 		if (GetComponent<PlayerId> ().getId () == 0)
 			selection = GameObject.Find("/Modelos").transform.Find("CasillasJ1" ).gameObject;
 		else 
 			selection = GameObject.Find("/Modelos").transform.Find("CasillasJ2" ).gameObject;
+		
+		GameObject.Find("/Modelos").transform.Find("CasillasJ1").gameObject.SetActive (false);
+		GameObject.Find("/Modelos").transform.Find("CasillasJ2").gameObject.SetActive (false);
 	}
 
 	[ClientCallback]
 	void Update()
 	{
+		if (!isLocalPlayer)
+			return;
+		
 		if (tower == null) 
 		{
 			selection.SetActive (false);
@@ -70,8 +78,7 @@ public class TowerSpawner : NetworkBehaviour {
 		if (!ClockTimer.updateable)
 			return;
 		
-		if (!isLocalPlayer)
-			return;
+
 
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
 			Camera.main.GetComponent<freeCam> ().set_aimCursor (false);
