@@ -46,9 +46,12 @@ public class TowerSpawner : NetworkBehaviour {
 	}
 
 	void Start() {
-		/*GameObject.Find("/Modelos").transform.Find("CasillasJ1").gameObject.SetActive (false);
+		GameObject.Find("/Modelos").transform.Find("CasillasJ1").gameObject.SetActive (false);
 		GameObject.Find("/Modelos").transform.Find("CasillasJ2").gameObject.SetActive (false);
-		selection = GameObject.Find("/Modelos").transform.Find("CasillasJ" + (GetComponent<PlayerId> ().getId () + 1)).gameObject;*/
+		if (GetComponent<PlayerId> ().getId () == 0)
+			selection = GameObject.Find("/Modelos").transform.Find("CasillasJ1" ).gameObject;
+		else 
+			selection = GameObject.Find("/Modelos").transform.Find("CasillasJ2" ).gameObject;
 	}
 
 	[ClientCallback]
@@ -56,12 +59,12 @@ public class TowerSpawner : NetworkBehaviour {
 	{
 		if (tower == null) 
 		{
-			//selection.SetActive (false);
+			selection.SetActive (false);
 			return;
 		} 
 		else
 		{
-			//selection.SetActive (true);
+			selection.SetActive (true);
 		}
 		
 		if (!ClockTimer.updateable)
@@ -96,6 +99,7 @@ public class TowerSpawner : NetworkBehaviour {
 				return;
 			}
 			CmdSpawn (hit.point, playerId.gameObject, collider, tower.GetComponent<TowerInfo>().id); // Lo llaman los clientes!
+			tower = null;
 		}
 	}
 		
