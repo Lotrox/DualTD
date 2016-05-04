@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11473082}
   - 114: {fileID: 11451638}
   - 114: {fileID: 11426070}
+  - 195: {fileID: 19555298}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -43,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63b3104bd7d64abeb48c0b10d039da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creep: {fileID: 130306, guid: 9aa4b8916e6244f6581d65eb87642020, type: 2}
+  creep: {fileID: 164238, guid: 27aadf125e06fb846a6ec51cbc52b189, type: 2}
 --- !u!114 &11451638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,6 +128,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   money: 0
+--- !u!195 &19555298
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186930}
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -161,7 +182,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: creep
       value: 
-      objectReference: {fileID: 130306, guid: 9aa4b8916e6244f6581d65eb87642020, type: 2}
+      objectReference: {fileID: 164238, guid: 27aadf125e06fb846a6ec51cbc52b189, type: 2}
     - target: {fileID: 0}
       propertyPath: tower
       value: 
