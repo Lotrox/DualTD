@@ -26,7 +26,7 @@ public class freeCam : MonoBehaviour {
 
 	public void set_aimCursor(bool b){
 		if(b)
-			Cursor.SetCursor(aimCursor, hotSpot, CursorMode.Auto);
+			Cursor.SetCursor(aimCursor, new Vector2(aimCursor.width / 2.0f, aimCursor.height / 2.0f), CursorMode.Auto);
 		else
 			Cursor.SetCursor(normalCursor, hotSpot, CursorMode.Auto);
 	}
