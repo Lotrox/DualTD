@@ -12,11 +12,13 @@ public class AgentScript : NetworkBehaviour {
 	// Use this for initialization
 	void Start () {
 		agent = GetComponent<NavMeshAgent> ();
+		//print (target.position.x + target.position.z);
+		agent.SetDestination (target.position);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//print (target.position.x + target.position.z);
-		agent.SetDestination (target.position);
+		if (!ClockTimer.updateable)
+			agent.SetDestination(transform.position);
 	}
 }

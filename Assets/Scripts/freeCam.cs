@@ -18,6 +18,9 @@ public class freeCam : MonoBehaviour {
 
 
 	void Update () {
+		if (!ClockTimer.updateable)
+			return;
+		
 		if (Input.GetKey (KeyCode.Mouse1)) panCam ();
 		// else translateCam ();
 		zoomCam ();

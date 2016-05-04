@@ -66,6 +66,9 @@ public class NetworkMan : NetworkManager {
 
 	void Update()
 	{
+		if (!ClockTimer.updateable)
+			return;
+		
 		if (count >= 2)
 		{ // Los 2 jugadores están en partida.
 			if (firstWave)

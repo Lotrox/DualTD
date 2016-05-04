@@ -46,6 +46,9 @@ public class TowerSpawner : NetworkBehaviour {
 	[ClientCallback]
 	void Update()
 	{
+		if (!ClockTimer.updateable)
+			return;
+		
 		if (!isLocalPlayer)
 			return;
 

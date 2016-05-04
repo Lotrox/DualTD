@@ -82,6 +82,9 @@ public class TowerAttack : NetworkBehaviour {
 
 	void Update() 
 	{
+		if (!ClockTimer.updateable)
+			return;
+		
 		// Los enemigos abatidos son eliminados de la lista.
 		List<GameObject> toDelete = new List<GameObject> ();
 		foreach (GameObject g in enemyInRange) 
