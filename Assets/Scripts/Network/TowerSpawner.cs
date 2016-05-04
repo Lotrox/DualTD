@@ -5,7 +5,7 @@ using UnityEngine.Networking.NetworkSystem;
 
 public class TowerSpawner : NetworkBehaviour {
 
-	public GameObject tower;
+	public static GameObject tower = null;
 
 	enum TowerCase {
 		PushConfirm = 0,
@@ -46,12 +46,22 @@ public class TowerSpawner : NetworkBehaviour {
 	[ClientCallback]
 	void Update()
 	{
+		if (tower == null)
+			return;
+		
 		if (!ClockTimer.updateable)
 			return;
 		
 		if (!isLocalPlayer)
 			return;
 
+		if (Input.GetKeyDown (KeyCode.Mouse0)) {
+			Camera.main.GetComponent<freeCam> ().set_aimCursor (false);
+		}
+
+		if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject ())
+			return;
+		
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
 			Ray vRay = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit = new RaycastHit ();
@@ -67,6 +77,7 @@ public class TowerSpawner : NetworkBehaviour {
 			}
 
 			CmdSpawn (hit.point, playerId.gameObject, collider); // Lo llaman los clientes!
+			tower = null;
 		}
 	}
 
