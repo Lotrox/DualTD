@@ -49,12 +49,12 @@ public class TowerSpawner : NetworkBehaviour {
 	void Start() {
 		if (!isLocalPlayer)
 			return;
-		
+
 		if (GetComponent<PlayerId> ().getId () == 0)
-			selection = GameObject.Find("/Modelos").transform.Find("CasillasJ1" ).gameObject;
+			selection = GameObject.Find("/Modelos").transform.Find("CasillasJ1").gameObject;
 		else 
-			selection = GameObject.Find("/Modelos").transform.Find("CasillasJ2" ).gameObject;
-		
+			selection = GameObject.Find("/Modelos").transform.Find("CasillasJ2").gameObject;
+
 		GameObject.Find("/Modelos").transform.Find("CasillasJ1").gameObject.SetActive (false);
 		GameObject.Find("/Modelos").transform.Find("CasillasJ2").gameObject.SetActive (false);
 	}
@@ -77,8 +77,7 @@ public class TowerSpawner : NetworkBehaviour {
 		
 		if (!ClockTimer.updateable)
 			return;
-		
-
+	
 
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
 			Camera.main.GetComponent<freeCam> ().set_aimCursor (false);
