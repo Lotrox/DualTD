@@ -6,6 +6,7 @@ using UnityEngine.Networking.NetworkSystem;
 public class TowerSpawner : NetworkBehaviour {
 
 	public static GameObject tower = null;
+	GameObject selection;
 
 	enum TowerCase {
 		PushConfirm = 0,
@@ -43,11 +44,24 @@ public class TowerSpawner : NetworkBehaviour {
 		};
 	}
 
+	void Start() {
+		selection = GameObject.FindGameObjectWithTag ("select_j" + (GetComponent<PlayerId> ().getId () + 1));
+		GameObject.FindGameObjectWithTag ("select_j1").SetActive(false);
+		GameObject.FindGameObjectWithTag ("select_j2").SetActive(false);
+	}
+
 	[ClientCallback]
 	void Update()
 	{
-		if (tower == null)
+		if (tower == null) 
+		{
+			selection.SetActive (false);
 			return;
+		} 
+		else
+		{
+			selection.SetActive (true);
+		}
 		
 		if (!ClockTimer.updateable)
 			return;
@@ -58,11 +72,16 @@ public class TowerSpawner : NetworkBehaviour {
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
 			Camera.main.GetComponent<freeCam> ().set_aimCursor (false);
 		}
-
-		if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject ())
-			return;
+			
 		
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
+			
+			if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject ()) 
+			{
+				tower = null;
+				return;
+			}
+
 			Ray vRay = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit = new RaycastHit ();
 			Physics.Raycast (vRay, out hit, 1000);
@@ -76,21 +95,21 @@ public class TowerSpawner : NetworkBehaviour {
 				return;
 			}
 
-			CmdSpawn (hit.point, playerId.gameObject, collider); // Lo llaman los clientes!
+			CmdSpawn (hit.point, playerId.gameObject, collider, tower); // Lo llaman los clientes!
 			tower = null;
 		}
 	}
 
 	// Lo ejecuta el servidor!
 	[Command]
-	void CmdSpawn(Vector3 point, GameObject player, GameObject collider)
+	void CmdSpawn(Vector3 point, GameObject player, GameObject collider, GameObject towerSpawn)
 	{
 		PlayerId playerId = player.GetComponent<PlayerId> ();
-		TowerInfo towerInfo = tower.GetComponent<TowerInfo> ();
+		TowerInfo towerInfo = towerSpawn.GetComponent<TowerInfo> ();
 		TowerCase msg;
 
 		if (playerId.money >= towerInfo.cost) {
-			GameObject instance = (GameObject)Instantiate (tower, collider.transform.position, collider.transform.rotation);
+			GameObject instance = (GameObject)Instantiate (towerSpawn, collider.transform.position, collider.transform.rotation);
 			instance.GetComponent<SyncTowerBase> ().setTowerBase (collider).deactivate ();
 			instance.GetComponent<SyncOwner> ().setOwner (player);
 			//instance.GetComponent<SyncColor> ().myColor = c;

@@ -26,32 +26,38 @@ public class ClockTimer : MonoBehaviour {
 		waveTime = -20;
 		music = false;
 		turningOff = false;
+		GameObject.Find("/Modelos/Nexo_J1").transform.Find("Luces").gameObject.SetActive (false);
+		GameObject.Find("/Modelos/Nexo_J2").transform.Find("Luces").gameObject.SetActive (false);
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (updateable) {
-			if (((Time.realtimeSinceStartup - waveTime) < timeWait) && (Time.realtimeSinceStartup - waveTime) > 0.0f) {
-				t.text = (timeWait - (Time.realtimeSinceStartup - waveTime)).ToString ("F2") + " seg";
-				GameObject.FindGameObjectWithTag ("wave").GetComponent<Text> ().text = t.text;
-				if (!music) {
-					print ("Música detenida");
-					turningOff = true;
-					music = true;
-				}
-
-			} else {
-				if (music) {
-					print ("Reproduciendo música de oleada");
-					++numWave;
-					aSour.volume = 0.5f;
-					aSour.PlayOneShot (aClip, 0.5f);
-					music = false;
-				}
-				GameObject.FindGameObjectWithTag ("wave").GetComponent<Text> ().text = "Oleada " + numWave;
+		if (!updateable)
+			return;
+		
+		if (((Time.realtimeSinceStartup - waveTime) < timeWait) && (Time.realtimeSinceStartup - waveTime) > 0.0f) {
+			t.text = (timeWait - (Time.realtimeSinceStartup - waveTime)).ToString ("F2") + " seg";
+			GameObject.FindGameObjectWithTag ("wave").GetComponent<Text> ().text = t.text;
+			if (!music) {
+				print ("Música detenida");
+				turningOff = true;
+				music = true;
 			}
-			turnOffMusic ();
+
+		} else {
+			if (music) {
+				GameObject.Find("/Modelos/Nexo_J1").transform.Find("Luces").gameObject.SetActive (true);
+				GameObject.Find("/Modelos/Nexo_J2").transform.Find("Luces").gameObject.SetActive (true);
+
+				print ("Reproduciendo música de oleada");
+				++numWave;
+				aSour.volume = 0.5f;
+				aSour.PlayOneShot (aClip, 0.5f);
+				music = false;
+			}
+			GameObject.FindGameObjectWithTag ("wave").GetComponent<Text> ().text = "Oleada " + numWave;
 		}
+		turnOffMusic ();
 	}
 		
 	public void turnOffMusic(){
