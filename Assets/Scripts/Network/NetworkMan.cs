@@ -30,7 +30,7 @@ public class NetworkMan : NetworkManager {
 			B.GetComponent<NetworkRpc> ().RpcWinByDisconnection ();
 		if (Bc == conn)
 			A.GetComponent<NetworkRpc> ().RpcWinByDisconnection ();
-		SceneManager.LoadScene ("main");
+		//SceneManager.LoadScene ("main");
 		//NetworkRPC.getInstance().RpcPlayerDisconnect (); // Informar de una desconexión.
 	}
 

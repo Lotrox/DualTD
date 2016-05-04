@@ -44,6 +44,10 @@ public class NexusBehaviour : NetworkBehaviour {
 			// Rotura de fragmentos.
 			A.GetComponent<NetworkRpc> ().RpcNexusUnspawnCrystal (playerId.getId(), playerId.health);
 			B.GetComponent<NetworkRpc> ().RpcNexusUnspawnCrystal (playerId.getId(), playerId.health);
+
+			if (playerId.health <= 0) {
+				ClockTimer.updateable = false;
+			}
 		}
 	}
 }

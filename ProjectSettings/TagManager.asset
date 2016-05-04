@@ -15,6 +15,7 @@ TagManager:
   - hp_j2
   - wave
   - money
+  - Resultado
   layers:
   - Default
   - TransparentFX
