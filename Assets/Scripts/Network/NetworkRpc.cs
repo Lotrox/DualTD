@@ -51,6 +51,20 @@ public class NetworkRpc : NetworkBehaviour {
 		}
 	}
 
+	public void endCanvas(string t, string s) {
+		GameObject result = GameObject.Find ("/Canvas").transform.Find("Resultado").gameObject;
+		Text title = result.transform.GetChild (0).gameObject.GetComponent<Text>();
+		Text subtitle = (Text)result.transform.GetChild (1).gameObject.GetComponent <Text> ();
+		Button exit = (Button) result.transform.GetChild (2).gameObject.GetComponent<Button>();
+
+		title.text = t;
+		subtitle.text = s;
+		exit.onClick.AddListener(() => { Application.Quit(); });
+
+		result.SetActive (true);
+		ClockTimer.updateable = false;
+	}
+
 	[ClientRpc]
 	public void RpcNexusUnspawnCrystal(int id, int health) 
 	{
@@ -58,6 +72,8 @@ public class NetworkRpc : NetworkBehaviour {
 			return;
 
 		GameObject nexus = GameObject.Find ("/Modelos/Nexo_J" + (id + 1));
+		bool myself = (GetComponent<PlayerId> ().getId () == id);
+
 
 		for (int i = 90; i >= 0; i -= 10) 
 		{
@@ -69,19 +85,30 @@ public class NetworkRpc : NetworkBehaviour {
 		if (health <= 0) 
 		{
 			nexus.transform.FindChild ("Luces").gameObject.SetActive (false);
+			if (myself)
+			{
+				endCanvas ("Has perdido", "Todos tenemos errores");
+			} else 
+			{
+				endCanvas ("Has ganado", "Enhorabuena");
+			}
 		}
+	}
+
+	[ClientRpc]
+	public void RpcWinByDisconnection()
+	{
+		print ("Tu rival se ha desconectado, por lo tanto, se te autodeclara victoria.");
+
+		endCanvas ("Has ganado", "Tu rival se ha desconectado.");
+
+		//Network.Disconnect();
+		//MasterServer.UnregisterHost();
 	}
 
 	[ClientRpc]
 	public void RpcSoundTowerAttack(GameObject go){
 		go.GetComponent<TowerAttack>().PlaySound ();
 	
-	}
-
-	[ClientRpc]
-	public void RpcWinByDisconnection() {
-		print ("Tu rival se ha desconectado, por lo tanto, se te autodeclara victoria.");
-		//Network.Disconnect();
-		//MasterServer.UnregisterHost();
 	}
 }
