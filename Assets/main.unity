@@ -5801,7 +5801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &462473479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5840,8 +5840,8 @@ MonoBehaviour:
   m_PlayerPrefab: {fileID: 186930, guid: 11f201084c062534481b9836733bb8a5, type: 2}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 0
-  m_OfflineScene: 
-  m_OnlineScene: 
+  m_OfflineScene: menu
+  m_OnlineScene: main
   m_SpawnPrefabs:
   - {fileID: 158748, guid: 2040037f13b9b41f49a6958fb0af34d5, type: 2}
   - {fileID: 130306, guid: 9aa4b8916e6244f6581d65eb87642020, type: 2}
