@@ -45,9 +45,9 @@ public class TowerSpawner : NetworkBehaviour {
 	}
 
 	void Start() {
-		selection = GameObject.FindGameObjectWithTag ("select_j" + (GetComponent<PlayerId> ().getId () + 1));
-		GameObject.FindGameObjectWithTag ("select_j1").SetActive(false);
-		GameObject.FindGameObjectWithTag ("select_j2").SetActive(false);
+		/*GameObject.Find("/Modelos").transform.Find("CasillasJ1").gameObject.SetActive (false);
+		GameObject.Find("/Modelos").transform.Find("CasillasJ2").gameObject.SetActive (false);
+		selection = GameObject.Find("/Modelos").transform.Find("CasillasJ" + (GetComponent<PlayerId> ().getId () + 1)).gameObject;*/
 	}
 
 	[ClientCallback]
@@ -55,12 +55,12 @@ public class TowerSpawner : NetworkBehaviour {
 	{
 		if (tower == null) 
 		{
-			selection.SetActive (false);
+			//selection.SetActive (false);
 			return;
 		} 
 		else
 		{
-			selection.SetActive (true);
+			//selection.SetActive (true);
 		}
 		
 		if (!ClockTimer.updateable)
@@ -94,22 +94,29 @@ public class TowerSpawner : NetworkBehaviour {
 				TowerBase (TowerCase.RejectOut);
 				return;
 			}
-
-			CmdSpawn (hit.point, playerId.gameObject, collider, tower); // Lo llaman los clientes!
-			tower = null;
+			print ("CLIENT TOWER:" + tower.name);
+			CmdupdateTower (tower);
+			CmdSpawn (hit.point, playerId.gameObject, collider); // Lo llaman los clientes!
 		}
+	}
+
+	[Command]
+	void CmdupdateTower(GameObject towerSpawn){
+		print ("UPDATE TOWER:" + tower.name);
+		tower = towerSpawn;
 	}
 
 	// Lo ejecuta el servidor!
 	[Command]
-	void CmdSpawn(Vector3 point, GameObject player, GameObject collider, GameObject towerSpawn)
+	void CmdSpawn(Vector3 point, GameObject player, GameObject collider)
 	{
 		PlayerId playerId = player.GetComponent<PlayerId> ();
-		TowerInfo towerInfo = towerSpawn.GetComponent<TowerInfo> ();
+		print ("SPAWN TOWER:" +tower.name);
+		TowerInfo towerInfo = tower.GetComponent<TowerInfo> ();
 		TowerCase msg;
 
 		if (playerId.money >= towerInfo.cost) {
-			GameObject instance = (GameObject)Instantiate (towerSpawn, collider.transform.position, collider.transform.rotation);
+			GameObject instance = (GameObject)Instantiate (tower, collider.transform.position, collider.transform.rotation);
 			instance.GetComponent<SyncTowerBase> ().setTowerBase (collider).deactivate ();
 			instance.GetComponent<SyncOwner> ().setOwner (player);
 			//instance.GetComponent<SyncColor> ().myColor = c;

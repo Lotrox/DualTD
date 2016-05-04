@@ -9,8 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 426322}
   - 114: {fileID: 11474110}
-  - 114: {fileID: 11473082}
   - 114: {fileID: 11484314}
+  - 114: {fileID: 11473082}
   - 114: {fileID: 11451638}
   - 114: {fileID: 11426070}
   m_Layer: 0
@@ -71,7 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f663bcedeea59e40a4808cb2c8d8a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 137752, guid: ed8ad73abd6919b49a7c93d79e9ef01d, type: 2}
 --- !u!114 &11474110
 MonoBehaviour:
   m_ObjectHideFlags: 1
