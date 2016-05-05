@@ -31,7 +31,7 @@ public class TowerAttack : NetworkBehaviour {
 	}
 
 	public void PlaySound(){
-		aSour.PlayOneShot (aClip, 0.5f);
+		aSour.PlayOneShot (aClip, 0.25f);
 	}
 
 	void scanEnemies(Collider other) {
