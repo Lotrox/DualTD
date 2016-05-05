@@ -29,16 +29,16 @@ public class TowerSpawner : NetworkBehaviour {
 		switch (tc) 
 		{
 		case TowerCase.PushConfirm:
-			print ("Torre colocada.");
+			//userUI.notifyError("Torre colocada");
 			break;
 		case TowerCase.PopConfirm:
-			print ("Torre eliminada.");
+			//userUI.notifyError ("Torre eliminada");
 			break;
 		case TowerCase.RejectOut:
-			print ("No se puede construír aquí.");
+			userUI.notifyError ("No se puede construír aquí");
 			break;
 		case TowerCase.RejectMoney:
-			print ("No tienes suficiente dinero.");
+			userUI.notifyError ("No tienes suficiente dinero");
 			break;
 		default:
 			break;
@@ -102,6 +102,7 @@ public class TowerSpawner : NetworkBehaviour {
 			if (((playerId.getId () == 0) && (!collider.tag.Equals ("casilla_j1"))) || ((playerId.getId () == 1) && (!collider.tag.Equals ("casilla_j2"))))
 			{
 				TowerBase (TowerCase.RejectOut);
+				tower = null;
 				return;
 			}
 			CmdSpawn (hit.point, playerId.gameObject, collider, tower.GetComponent<TowerInfo>().id); // Lo llaman los clientes!

@@ -18,6 +18,7 @@ TagManager:
   - Resultado
   - select_j1
   - select_j2
+  - error
   layers:
   - Default
   - TransparentFX
