@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63b3104bd7d64abeb48c0b10d039da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creep: {fileID: 164238, guid: 27aadf125e06fb846a6ec51cbc52b189, type: 2}
+  creep: {fileID: 167128, guid: 27aadf125e06fb846a6ec51cbc52b189, type: 2}
 --- !u!114 &11451638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,7 +182,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: creep
       value: 
-      objectReference: {fileID: 164238, guid: 27aadf125e06fb846a6ec51cbc52b189, type: 2}
+      objectReference: {fileID: 167128, guid: 27aadf125e06fb846a6ec51cbc52b189, type: 2}
     - target: {fileID: 0}
       propertyPath: tower
       value: 
