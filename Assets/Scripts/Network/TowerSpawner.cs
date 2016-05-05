@@ -30,15 +30,19 @@ public class TowerSpawner : NetworkBehaviour {
 		{
 		case TowerCase.PushConfirm:
 			//userUI.notifyError("Torre colocada");
+			userUI.notifyAction(0);
 			break;
 		case TowerCase.PopConfirm:
 			//userUI.notifyError ("Torre eliminada");
+			userUI.notifyAction(2);
 			break;
 		case TowerCase.RejectOut:
 			userUI.notifyError ("No se puede construír aquí");
+			userUI.notifyAction(1);
 			break;
 		case TowerCase.RejectMoney:
 			userUI.notifyError ("No tienes suficiente dinero");
+			userUI.notifyAction(1);
 			break;
 		default:
 			break;
