@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towers:
   - {fileID: 137752, guid: ed8ad73abd6919b49a7c93d79e9ef01d, type: 2}
-  - {fileID: 136188, guid: 87daa9522904e4c9e8fb528a5721fb71, type: 2}
+  - {fileID: 181322, guid: 87daa9522904e4c9e8fb528a5721fb71, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -198,7 +198,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: towers.Array.data[1]
       value: 
-      objectReference: {fileID: 136188, guid: 87daa9522904e4c9e8fb528a5721fb71, type: 2}
+      objectReference: {fileID: 181322, guid: 87daa9522904e4c9e8fb528a5721fb71, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 186930}

@@ -101,12 +101,12 @@ public class TowerAttack : NetworkBehaviour {
 			if (!IsDestroyed(g)) 
 			{
 				TowerInfo ti = GetComponent<TowerInfo> ();
+				gameObject.transform.GetChild(1).transform.LookAt(g.transform);
 				if (Time.realtimeSinceStartup > (lastHit + ti.speedAttack)) 
 				{
 					UnitInfo unit = g.GetComponent<UnitInfo> ();
 					if (unit.health > 0) {
 						lastHit = Time.realtimeSinceStartup;
-						gameObject.transform.GetChild(1).transform.LookAt(g.transform);
 						RpcSound ();
 						unit.health -= (int) ti.damagePerHit;
 					}

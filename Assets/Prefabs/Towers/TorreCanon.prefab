@@ -517,8 +517,8 @@ MonoBehaviour:
   m_Script: {fileID: -1267208747, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 0}
-  m_ChildIndex: 4294967295
+  m_Target: {fileID: 428690}
+  m_ChildIndex: 0
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66b36b4c42b34ab2b308d5c9c606b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aClip: {fileID: 8300000, guid: a71b7559e45f9e14788b7296163f9137, type: 3}
+  aClip: {fileID: 8300000, guid: 47a8a27c8c0c9614cb146c56376ead8b, type: 3}
 --- !u!114 &11477048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -577,7 +577,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Target
+      value: 
+      objectReference: {fileID: 428690}
+    - target: {fileID: 0}
+      propertyPath: m_ChildIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: aClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 47a8a27c8c0c9614cb146c56376ead8b, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181322}
