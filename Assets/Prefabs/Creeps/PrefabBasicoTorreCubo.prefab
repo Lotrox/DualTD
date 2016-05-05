@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66b36b4c42b34ab2b308d5c9c606b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aClip: {fileID: 0}
 --- !u!114 &11418334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc79fb05152c40bca1b59d714c598fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   cost: 10
   range: 10
   damagePerHit: 1

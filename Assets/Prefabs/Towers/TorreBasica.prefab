@@ -524,6 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc79fb05152c40bca1b59d714c598fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   cost: 10
   range: 10
   damagePerHit: 1
