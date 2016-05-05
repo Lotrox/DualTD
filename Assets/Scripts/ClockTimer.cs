@@ -55,7 +55,10 @@ public class ClockTimer : MonoBehaviour {
 				aSour.PlayOneShot (aClip, 0.5f);
 				music = false;
 			}
-			GameObject.FindGameObjectWithTag ("wave").GetComponent<Text> ().text = "Oleada " + numWave;
+			if(numWave == 0) 
+				GameObject.FindGameObjectWithTag ("wave").GetComponent<Text> ().text = "Esperando...";
+			else
+				GameObject.FindGameObjectWithTag ("wave").GetComponent<Text> ().text = "Oleada " + numWave;
 		}
 		turnOffMusic ();
 	}
