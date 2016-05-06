@@ -5756,6 +5756,7 @@ GameObject:
   - 224: {fileID: 455577447}
   - 222: {fileID: 455577449}
   - 114: {fileID: 455577448}
+  - 114: {fileID: 455577450}
   m_Layer: 5
   m_Name: HealthBars
   m_TagString: Untagged
@@ -5778,10 +5779,10 @@ RectTransform:
   - {fileID: 2091613016}
   m_Father: {fileID: 1858012732}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.19575071, y: 0.8714811}
-  m_AnchorMax: {x: 0.79800004, y: 1}
-  m_AnchoredPosition: {x: 14, y: -7.7}
-  m_SizeDelta: {x: -174, y: 130.78003}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 0, y: 208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &455577448
 MonoBehaviour:
@@ -5815,6 +5816,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 455577446}
+--- !u!114 &455577450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 455577446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1254083943, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 2.7884614
 --- !u!1 &458956120
 GameObject:
   m_ObjectHideFlags: 0
@@ -15641,6 +15655,7 @@ GameObject:
   - 224: {fileID: 1086070490}
   - 222: {fileID: 1086070492}
   - 114: {fileID: 1086070491}
+  - 114: {fileID: 1086070493}
   m_Layer: 5
   m_Name: TowerLogo
   m_TagString: Untagged
@@ -15663,7 +15678,7 @@ RectTransform:
   m_AnchorMin: {x: 0.38378757, y: 0.955882}
   m_AnchorMax: {x: 0.6306373, y: 1}
   m_AnchoredPosition: {x: -0.099999905, y: 10.2}
-  m_SizeDelta: {x: -0.67999935, y: 20.399994}
+  m_SizeDelta: {x: -0.67999935, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086070491
 MonoBehaviour:
@@ -15697,6 +15712,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1086070489}
+--- !u!114 &1086070493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1086070489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1254083943, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 1
+  m_AspectRatio: 0.8078023
 --- !u!1 &1086345923
 GameObject:
   m_ObjectHideFlags: 0
@@ -16728,7 +16756,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.823, y: 0}
   m_AnchorMax: {x: 0.94031066, y: 0.058197327}
-  m_AnchoredPosition: {x: 22.484995, y: 0.31000006}
+  m_AnchoredPosition: {x: 22.484863, y: 0.3100586}
   m_SizeDelta: {x: 48.050003, y: 2.2200003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1159402706
@@ -24103,6 +24131,7 @@ GameObject:
   - 114: {fileID: 1858012729}
   - 114: {fileID: 1858012733}
   - 82: {fileID: 1858012734}
+  - 114: {fileID: 1858012735}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -24276,6 +24305,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1858012735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1858012728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1280, y: 720}
+  m_ScreenMatchMode: 2
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!1 &1875117058
 GameObject:
   m_ObjectHideFlags: 0
