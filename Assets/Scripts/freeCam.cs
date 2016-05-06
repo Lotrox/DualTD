@@ -38,7 +38,7 @@ public class freeCam : MonoBehaviour {
 		if (Input.GetKey (KeyCode.Mouse1)) panCam ();
 		// else translateCam ();
 		zoomCam ();
-		rotateCam ();
+		//rotateCam ();
 	}
 
 	void translateCam()
@@ -104,8 +104,8 @@ public class freeCam : MonoBehaviour {
 	void rotateCam(){
 		if (Input.GetKeyUp (KeyCode.Comma) || Input.GetKeyUp (KeyCode.Period))
 		{
-			if(!playerOne) transform.eulerAngles = new Vector3(30, 225, 0);
-			else transform.eulerAngles = new Vector3(30, 45, 0);
+			if(!playerOne) transform.eulerAngles = new Vector3(30, 0, 0);
+			else transform.eulerAngles = new Vector3(30, 180, 0);
 		}
 		if (Input.GetKey (KeyCode.Comma)) transform.eulerAngles = new Vector3(30, transform.eulerAngles.y + 0.5f, 0); 
 		if (Input.GetKey (KeyCode.Period)) transform.eulerAngles = new Vector3(30, transform.eulerAngles.y - 0.5f, 0); 
