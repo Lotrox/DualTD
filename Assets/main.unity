@@ -5682,6 +5682,7 @@ GameObject:
   - 224: {fileID: 452036671}
   - 222: {fileID: 452036673}
   - 114: {fileID: 452036672}
+  - 114: {fileID: 452036674}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -5704,7 +5705,7 @@ RectTransform:
   m_AnchorMin: {x: 0.4557804, y: 0.056228463}
   m_AnchorMax: {x: 0.96315217, y: 0.92855656}
   m_AnchoredPosition: {x: -0.19999981, y: -0.065}
-  m_SizeDelta: {x: -3.7200022, y: -1.75}
+  m_SizeDelta: {x: -3.7200022, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &452036672
 MonoBehaviour:
@@ -5727,9 +5728,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 0
+    m_FontSize: 10
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 90
     m_Alignment: 3
@@ -5737,7 +5738,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.9
+    m_LineSpacing: 0.8
   m_Text: "<b>Torre b\xE1sica</b>\n\n<b>Precio:</b> 5g\n<b>Rango:</b> Medio\n<b>Da\xF1o:</b>
     Bajo\n<b>Veloc:</b> Bajo"
 --- !u!222 &452036673
@@ -5746,6 +5747,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 452036670}
+--- !u!114 &452036674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 452036670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &455577446
 GameObject:
   m_ObjectHideFlags: 0
@@ -5828,7 +5842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 2
-  m_AspectRatio: 2.7884614
+  m_AspectRatio: 2.5
 --- !u!1 &458956120
 GameObject:
   m_ObjectHideFlags: 0
@@ -11490,6 +11504,7 @@ GameObject:
   - 224: {fileID: 733211732}
   - 222: {fileID: 733211734}
   - 114: {fileID: 733211733}
+  - 114: {fileID: 733211735}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -11509,10 +11524,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1159402705}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0.3155624, y: 0.07365179}
-  m_AnchorMax: {x: 0.5436411, y: 0.9264345}
-  m_AnchoredPosition: {x: 0.20249999, y: 0.30500007}
-  m_SizeDelta: {x: -0.9450002, y: 0.32999992}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &733211733
 MonoBehaviour:
@@ -11546,6 +11561,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 733211731}
+--- !u!114 &733211735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733211731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1254083943, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 3
+  m_AspectRatio: 1
 --- !u!1001 &753997147
 Prefab:
   m_ObjectHideFlags: 0
@@ -15677,7 +15705,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.38378757, y: 0.955882}
   m_AnchorMax: {x: 0.6306373, y: 1}
-  m_AnchoredPosition: {x: -0.099999905, y: 10.2}
+  m_AnchoredPosition: {x: -0.099999905, y: 7}
   m_SizeDelta: {x: -0.67999935, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086070491
@@ -16756,8 +16784,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.823, y: 0}
   m_AnchorMax: {x: 0.94031066, y: 0.058197327}
-  m_AnchoredPosition: {x: 22.484863, y: 0.3100586}
-  m_SizeDelta: {x: 48.050003, y: 2.2200003}
+  m_AnchoredPosition: {x: 23.254932, y: -0.39997077}
+  m_SizeDelta: {x: 46.509865, y: 0.79994154}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1159402706
 MonoBehaviour:
@@ -18658,6 +18686,7 @@ GameObject:
   - 224: {fileID: 1411440575}
   - 222: {fileID: 1411440577}
   - 114: {fileID: 1411440576}
+  - 114: {fileID: 1411440578}
   m_Layer: 5
   m_Name: hambur
   m_TagString: Untagged
@@ -18678,9 +18707,9 @@ RectTransform:
   m_Father: {fileID: 339236428}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: -6}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1411440576
 MonoBehaviour:
@@ -18714,6 +18743,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1411440574}
+--- !u!114 &1411440578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1411440574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1254083943, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 3
+  m_AspectRatio: 1
 --- !u!1 &1413102300
 GameObject:
   m_ObjectHideFlags: 0
@@ -28034,11 +28076,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 13
+    m_FontSize: 12
     m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 12
-    m_MaxSize: 28
+    m_MaxSize: 24
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -28505,6 +28547,7 @@ GameObject:
   - 224: {fileID: 2114498266}
   - 222: {fileID: 2114498268}
   - 114: {fileID: 2114498267}
+  - 114: {fileID: 2114498269}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -28527,7 +28570,7 @@ RectTransform:
   m_AnchorMin: {x: 0.4557804, y: 0.056228463}
   m_AnchorMax: {x: 0.96315217, y: 0.92855656}
   m_AnchoredPosition: {x: -0.19999981, y: -0.065}
-  m_SizeDelta: {x: -3.7200022, y: -1.75}
+  m_SizeDelta: {x: -3.7200022, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2114498267
 MonoBehaviour:
@@ -28550,9 +28593,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 0
+    m_FontSize: 10
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 90
     m_Alignment: 3
@@ -28560,7 +28603,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.9
+    m_LineSpacing: 0.8
   m_Text: "<b>Torre ca\xF1\xF3n</b>\n\n<b>Precio:</b> 12g\n<b>Rango:</b> Muy bajo\n<b>Da\xF1o:</b>
     Alto\n<b>Veloc:</b> Muy bajo"
 --- !u!222 &2114498268
@@ -28569,6 +28612,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2114498265}
+--- !u!114 &2114498269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2114498265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &2123016280
 GameObject:
   m_ObjectHideFlags: 0
