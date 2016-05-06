@@ -28443,8 +28443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244fe6151fe4a9647a083f266186b96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipWave: {fileID: 8300000, guid: 981fa44ddc0515d438fb2f05ab6945c4, type: 3}
-  clipWait: {fileID: 8300000, guid: dcb3296e86eac64419d0ca7dfa0f05fb, type: 3}
+  clipWave: {fileID: 8300000, guid: 6b577d5c68c08154290ad1aa80456026, type: 3}
+  clipWait: {fileID: 8300000, guid: 78afb0ce5f16ffe47ae27631032a9368, type: 3}
   clipGong: {fileID: 8300000, guid: 8c26d3adf0ba0a84080c5d2dcd1987ee, type: 3}
 --- !u!82 &2091613020
 AudioSource:
