@@ -108,7 +108,8 @@ public class TowerAttack : NetworkBehaviour {
 					if (unit.health > 0) {
 						lastHit = Time.realtimeSinceStartup;
 						RpcSound ();
-						unit.health -= (int) ti.damagePerHit;
+						RpcDamage (g, (int)ti.damagePerHit);
+						//unit.health -= (int)ti.damagePerHit;
 					}
 					if (unit.health <= 0) {
 						SyncOwner syncOwner = GetComponent<SyncOwner> ();
@@ -124,11 +125,21 @@ public class TowerAttack : NetworkBehaviour {
 		}
 	}
 
+	public void RpcDamage(GameObject _unit, int _damage){
+		GameObject A = (((NetworkMan)NetworkMan.singleton).A),
+		B = (((NetworkMan)NetworkMan.singleton).B);
+		// Daño a los creeps, para actualizar información en el cliente.
+		A.GetComponent<NetworkRpc> ().RpcDamage(_unit, _damage);
+		//B.GetComponent<NetworkRpc> ().RpcDamage(_unit, _damage);
+	
+	}
+
 	public void RpcSound(){
 		GameObject A = (((NetworkMan)NetworkMan.singleton).A),
 			       B = (((NetworkMan)NetworkMan.singleton).B);
 
 		// Rotura de fragmentos.
+
 		A.GetComponent<NetworkRpc> ().RpcSoundTowerAttack (gameObject);
 		B.GetComponent<NetworkRpc> ().RpcSoundTowerAttack (gameObject);
 

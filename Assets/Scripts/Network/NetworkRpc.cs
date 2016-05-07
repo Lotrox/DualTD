@@ -111,4 +111,11 @@ public class NetworkRpc : NetworkBehaviour {
 		go.GetComponent<TowerAttack>().PlaySound ();
 	
 	}
+
+	[ClientRpc]
+	public void RpcDamage(GameObject _unit, int _damage){
+		if(_unit != null)
+			_unit.GetComponent<UnitInfo>().health -= _damage;
+		print ("Cliente minion: " + _unit.name + " "  + _unit.GetComponent<UnitInfo> ().health);
+	}
 }

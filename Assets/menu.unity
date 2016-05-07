@@ -119,7 +119,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -379,7 +379,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 819953624}
   - 114: {fileID: 819953623}
-  - 114: {fileID: 819953622}
+  - 114: {fileID: 819953625}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -387,21 +387,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &819953622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 819953621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 227461547, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  showGUI: 1
-  offsetX: 0
-  offsetY: 0
 --- !u!114 &819953623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,7 +417,7 @@ MonoBehaviour:
   - {fileID: 137752, guid: ed8ad73abd6919b49a7c93d79e9ef01d, type: 2}
   - {fileID: 181322, guid: 87daa9522904e4c9e8fb528a5721fb71, type: 2}
   - {fileID: 197860, guid: d939b5fedadc8974bbd98ad4f18c38af, type: 2}
-  - {fileID: 167128, guid: 27aadf125e06fb846a6ec51cbc52b189, type: 2}
+  - {fileID: 162742, guid: d49f3e666d536084ebf5ab83b869f6c3, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -487,6 +472,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &819953625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 819953621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b111084403983a41a3fddad3488b247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showGUI: 1
+  offsetX: 40
+  offsetY: 0
 --- !u!1 &1191441312
 GameObject:
   m_ObjectHideFlags: 0

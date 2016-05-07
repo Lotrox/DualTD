@@ -19,6 +19,7 @@ TagManager:
   - select_j1
   - select_j2
   - error
+  - creep_hp
   layers:
   - Default
   - TransparentFX
