@@ -114,7 +114,9 @@ public class NetworkRpc : NetworkBehaviour {
 
 	[ClientRpc]
 	public void RpcDamage(GameObject _unit, float norm_health){
-		GameObject hbar = _unit.GetComponent<UnitInfo> ().health_bar;
-		_unit.GetComponent<UnitInfo>().health_bar.transform.localScale = new Vector3(norm_health, hbar.transform.localScale.y, hbar.transform.localScale.z);
+		if(_unit.gameObject != null){
+			GameObject hbar = _unit.GetComponent<UnitInfo> ().health_bar;
+			_unit.GetComponent<UnitInfo>().health_bar.transform.localScale = new Vector3(norm_health, hbar.transform.localScale.y, hbar.transform.localScale.z);
+		}
 	}
 }
