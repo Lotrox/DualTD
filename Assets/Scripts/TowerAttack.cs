@@ -102,7 +102,7 @@ public class TowerAttack : NetworkBehaviour {
 			{
 				TowerInfo ti = GetComponent<TowerInfo> ();
 				gameObject.transform.GetChild(1).transform.LookAt(g.transform);
-				if (Time.realtimeSinceStartup > (lastHit + ti.speedAttack)) 
+				if (Time.realtimeSinceStartup >= (lastHit + ti.speedAttack)) 
 				{
 					UnitInfo unit = g.GetComponent<UnitInfo> ();
 					if (unit.health > 0) {
@@ -113,13 +113,15 @@ public class TowerAttack : NetworkBehaviour {
 
 					}
 					if (unit.health <= 0) {
-						SyncOwner syncOwner = GetComponent<SyncOwner> ();
-						PlayerId playerId = syncOwner.getOwner ().GetComponent<PlayerId> ();
-						playerId.GainMoney (unit.money);
-						if (!IsDestroyed (g))
+						if (!IsDestroyed (g)) {
+							SyncOwner syncOwner = GetComponent<SyncOwner> ();
+							PlayerId playerId = syncOwner.getOwner ().GetComponent<PlayerId> ();
+							playerId.GainMoney (unit.money);
 							--(((NetworkMan)NetworkMan.singleton).unitsAlive);
-						Destroy (g);
-						print ("Quedan " + (((NetworkMan)NetworkMan.singleton).unitsAlive) + " unidades vivas.");
+							Destroy (g);
+							print ("Quedan " + (((NetworkMan)NetworkMan.singleton).unitsAlive) + " unidades vivas.");
+						} else
+							print ("ESTOY MUERTA!");
 					}
 				}
 			}

@@ -14,6 +14,7 @@ public class NetworkMan : NetworkManager {
 
 	public GameObject A, B; // Jugadores 1 y 2.
 	private NetworkConnection Ac, Bc;
+
 	public int unitsAlive = 0; // Unidades vivas en una oleada.
 	bool firstWave = true;
 	bool init = false;
