@@ -17,9 +17,9 @@ public class UnitInfo : MonoBehaviour {
 		nma.acceleration = 5;
 	}
 	void Update(){
-		float norm_health = (float)health / max_health;
-		if (norm_health <= 0)
-			norm_health = 0;
-		health_bar.transform.localScale = new Vector3((float)health / max_health, health_bar.transform.localScale.y, health_bar.transform.localScale.z);
+//		float norm_health = (float)health / max_health;
+//		if (norm_health <= 0)
+//			norm_health = 0;
+//		health_bar.transform.localScale = new Vector3((float)health / max_health, health_bar.transform.localScale.y, health_bar.transform.localScale.z);
 	}
 }
