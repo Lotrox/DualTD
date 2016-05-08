@@ -40,28 +40,31 @@ public class NetworkRpc : NetworkBehaviour {
 	public void CmdSpawnUnits(GameObject player, int wave) 
 	{
 		int num = wave;
-		PlayerId playerId = player.GetComponent<PlayerId> ();
-		print ("Spawn de unidad perteneciente al jugador " + playerId.getId ());
-
-		GameObject instance;
 		if ((num % 5) == 0) // Oleadas jefe.
-		{ 
-			boss.GetComponent<AgentScript> ().target = e [playerId.getId ()];
-			instance = (GameObject)Instantiate (boss, s [playerId.getId ()].position, s [playerId.getId ()].rotation);
 			num = wave / 5;
-		} 
-		else // Oleadas arañas.
-		{ 
-			creep.GetComponent<AgentScript> ().target = e [playerId.getId ()];
-			instance = (GameObject)Instantiate (creep, s [playerId.getId ()].position, s [playerId.getId ()].rotation);
+		else
 			num++;
-		}
-
+		
 		for (int i = 0; i < num; ++i) 
 		{
+			PlayerId playerId = player.GetComponent<PlayerId> ();
+			GameObject instance;
+			print ("Spawn de unidad perteneciente al jugador " + playerId.getId ());
+			if ((num % 5) == 0) 
+			{
+				boss.GetComponent<AgentScript> ().target = e [playerId.getId ()];
+				instance = (GameObject)Instantiate (boss, s [playerId.getId ()].position, s [playerId.getId ()].rotation);
+			} 
+			else 
+			{
+				creep.GetComponent<AgentScript> ().target = e [playerId.getId ()];
+				instance = (GameObject)Instantiate (creep, s [playerId.getId ()].position, s [playerId.getId ()].rotation);
+			}
+
 			instance.GetComponent<SyncOwner> ().setOwner (player);
+
 			NetworkServer.Spawn (instance);
-			++(((NetworkMan)NetworkMan.singleton).unitsAlive);
+		++(((NetworkMan)NetworkMan.singleton).unitsAlive);
 		}
 	}
 
