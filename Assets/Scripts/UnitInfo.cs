@@ -17,7 +17,7 @@ public class UnitInfo : MonoBehaviour {
 		nma.speed = speed;
 		nma.acceleration = 5;
 	}
-	public void Update(){
+	public void UpdateTower(){
 		max_health = health;
 		NavMeshAgent nma = GetComponent<NavMeshAgent> ();
 		nma.speed = speed;
