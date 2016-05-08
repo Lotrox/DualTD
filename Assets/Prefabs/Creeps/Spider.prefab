@@ -1726,7 +1726,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5798e44f313589e4ab30c2ca6c2f201f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1743,8 +1743,8 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0.1
-      value: 1
+    - time: 0.06153846
+      value: 0.80992645
       inSlope: -10.0039835
       outSlope: -10.0039835
       tangentMode: 0
@@ -2227,7 +2227,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].time
+      value: 0.06153846
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
+      value: 0.80992645
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 162742}

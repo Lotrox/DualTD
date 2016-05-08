@@ -9,7 +9,7 @@ public class ClockTimer : MonoBehaviour {
 
 	public static bool updateable = true;
 
-	public AudioClip clipWave, clipWait, clipGong;
+	public AudioClip clipWave, clipWait, clipGong, clipBoss;
 	private AudioSource aSour;
 	static float waveTime = -20; // Trata sobre el tiempo desde que se inició la última oleada y/o en curso.
 	Text t;
@@ -86,7 +86,10 @@ public class ClockTimer : MonoBehaviour {
 				//aSour.Stop ();
 				turningOn = false;
 				aSour.volume = 0.6f;
-				aSour.PlayOneShot (clipWave, 0.5f);
+				if(numWave%5 == 0)
+					aSour.PlayOneShot (clipBoss, 0.5f);
+				else
+					aSour.PlayOneShot (clipWave, 0.5f);
 			}
 			aSour.volume -= 0.05f;
 		}

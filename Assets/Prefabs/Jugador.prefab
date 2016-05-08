@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63b3104bd7d64abeb48c0b10d039da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creep: {fileID: 161460, guid: cf845bdf7f5e6334bb59b82f867f1d5f, type: 2}
+  creep: {fileID: 152190, guid: 2bc7664514b266f42b8406861249ddf1, type: 2}
+  boss: {fileID: 162742, guid: d49f3e666d536084ebf5ab83b869f6c3, type: 2}
 --- !u!114 &11430340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,7 +88,7 @@ MonoBehaviour:
   towers:
   - {fileID: 137752, guid: ed8ad73abd6919b49a7c93d79e9ef01d, type: 2}
   - {fileID: 181322, guid: 87daa9522904e4c9e8fb528a5721fb71, type: 2}
-  - {fileID: 0}
+  - {fileID: 117752, guid: bad29eaca57150f4b93064c9e6c38daa, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -194,7 +195,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: creep
       value: 
-      objectReference: {fileID: 161460, guid: cf845bdf7f5e6334bb59b82f867f1d5f, type: 2}
+      objectReference: {fileID: 152190, guid: 2bc7664514b266f42b8406861249ddf1, type: 2}
     - target: {fileID: 0}
       propertyPath: tower
       value: 
@@ -211,6 +212,14 @@ Prefab:
       propertyPath: towers.Array.data[1]
       value: 
       objectReference: {fileID: 181322, guid: 87daa9522904e4c9e8fb528a5721fb71, type: 2}
+    - target: {fileID: 0}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 162742, guid: d49f3e666d536084ebf5ab83b869f6c3, type: 2}
+    - target: {fileID: 0}
+      propertyPath: towers.Array.data[2]
+      value: 
+      objectReference: {fileID: 117752, guid: bad29eaca57150f4b93064c9e6c38daa, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 186930}
