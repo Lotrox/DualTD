@@ -83,13 +83,10 @@ public class TowerSpawner : NetworkBehaviour {
 			return;
 	
 
-		if (Input.GetKeyDown (KeyCode.Mouse0)) {
+		if (Input.GetKeyDown (KeyCode.Mouse0)) 
+		{
 			Camera.main.GetComponent<freeCam> ().set_aimCursor (false);
-		}
-			
-		
-		if (Input.GetKeyDown (KeyCode.Mouse0)) {
-			
+
 			if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject ()) 
 			{
 				tower = null;

@@ -9,4 +9,9 @@ public class TowerUI : MonoBehaviour {
 		TowerSpawner.tower = tower;
 		Camera.main.GetComponent<freeCam> ().set_aimCursor (true);
 	}
+
+	public void deleteTower() {
+		TowerDeleter.readyForDelete = true;
+		Camera.main.GetComponent<freeCam> ().set_aimCursor (true);
+	}
 }

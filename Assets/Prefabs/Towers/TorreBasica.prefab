@@ -66,7 +66,7 @@ GameObject:
   - 114: {fileID: 11405428}
   - 114: {fileID: 11494790}
   - 82: {fileID: 8237888}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: TorreBasica
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - 33: {fileID: 3330738}
   - 65: {fileID: 6550194}
   - 23: {fileID: 2374866}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cubo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - 33: {fileID: 3339352}
   - 23: {fileID: 2319850}
   - 136: {fileID: 13626520}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tower_Base2_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,6 +732,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Volume
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
