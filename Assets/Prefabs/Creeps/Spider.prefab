@@ -1891,7 +1891,7 @@ MonoBehaviour:
   damage: 5
   max_health: 10
   health: 10
-  money: 2
+  money: 3
   resistance: 5
   speed: 6
   isBoss: 0
@@ -2272,6 +2272,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: speed
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: money
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

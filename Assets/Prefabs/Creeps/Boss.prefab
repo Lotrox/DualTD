@@ -1331,7 +1331,7 @@ MonoBehaviour:
   damage: 33
   max_health: 100
   health: 100
-  money: 15
+  money: 10
   resistance: 5
   speed: 3
   isBoss: 1
@@ -1729,7 +1729,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: money
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed
