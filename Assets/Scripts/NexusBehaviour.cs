@@ -40,7 +40,7 @@ public class NexusBehaviour : NetworkBehaviour {
 			else
 				playerId.TakeDamage ((int)unit.damage);
 			
-			syncOwner.getOwner ().GetComponent<PlayerId> ().GainMoney (unit.money);
+			syncOwner.getOwner ().GetComponent<PlayerId> ().GainMoney (unit.money/3);
 			Destroy(other.gameObject);
 			((NetworkMan)NetworkMan.singleton).decreaseUnits();
 
