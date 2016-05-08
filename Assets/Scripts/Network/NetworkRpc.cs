@@ -46,7 +46,7 @@ public class NetworkRpc : NetworkBehaviour {
 		{
 			UnitInfo unit = creep.GetComponent<UnitInfo> ();
 			if(unit.speed <= 20) 
-				creep.GetComponent<UnitInfo> ().speed += 0.2;
+				creep.GetComponent<UnitInfo> ().speed += 0.2f;
 			if (wave % 3 == 0) {
 				unit.damage += 1;
 				unit.health += 1;
