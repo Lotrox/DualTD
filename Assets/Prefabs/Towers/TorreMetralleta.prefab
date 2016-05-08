@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66b36b4c42b34ab2b308d5c9c606b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aClip: {fileID: 8300000, guid: 1c79addc4d036c846b769873c048831f, type: 3}
+  aClip: {fileID: 8300000, guid: 38c15aed5a23cbb438b770604dd776d1, type: 3}
 --- !u!114 &11449540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -658,7 +658,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: aClip
       value: 
-      objectReference: {fileID: 8300000, guid: 1c79addc4d036c846b769873c048831f, type: 3}
+      objectReference: {fileID: 8300000, guid: 38c15aed5a23cbb438b770604dd776d1, type: 3}
     - target: {fileID: 0}
       propertyPath: m_Target
       value: 
@@ -686,6 +686,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: speedAttack
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

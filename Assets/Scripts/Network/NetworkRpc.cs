@@ -40,7 +40,7 @@ public class NetworkRpc : NetworkBehaviour {
 	public void CmdSpawnUnits(GameObject player, int wave) 
 	{
 		int num = wave;
-		if ((num % 5) == 0) // Oleadas jefe.
+		if ((wave % 5) == 0) // Oleadas jefe.
 			num = wave / 5;
 		else
 			num++;
@@ -50,7 +50,7 @@ public class NetworkRpc : NetworkBehaviour {
 			PlayerId playerId = player.GetComponent<PlayerId> ();
 			GameObject instance;
 			print ("Spawn de unidad perteneciente al jugador " + playerId.getId ());
-			if ((num % 5) == 0) 
+			if ((wave % 5) == 0) 
 			{
 				boss.GetComponent<AgentScript> ().target = e [playerId.getId ()];
 				instance = (GameObject)Instantiate (boss, s [playerId.getId ()].position, s [playerId.getId ()].rotation);
