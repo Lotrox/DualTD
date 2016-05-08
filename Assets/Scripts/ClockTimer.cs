@@ -83,7 +83,7 @@ public class ClockTimer : MonoBehaviour {
 	public void turnOnMusic(){
 		if (turningOn) {
 			if (aSour.volume < 0.2f) {
-				//aSour.Stop ();
+				aSour.Stop ();
 				turningOn = false;
 				aSour.volume = 0.6f;
 				if(numWave%5 == 0)

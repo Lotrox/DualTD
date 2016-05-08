@@ -42,8 +42,19 @@ public class NetworkRpc : NetworkBehaviour {
 		int num = wave;
 		if ((wave % 5) == 0) // Oleadas jefe.
 			num = wave / 5;
-		else
+		else 
+		{
+			UnitInfo unit = creep.GetComponent<UnitInfo> ();
+			if(unit.speed <= 20) 
+				creep.GetComponent<UnitInfo> ().speed += 0.2;
+			if (wave % 3 == 0) {
+				unit.damage += 1;
+				unit.health += 1;
+			}
+			unit.Update ();
 			num++;
+		}
+			
 		
 		for (int i = 0; i < num; ++i) 
 		{
