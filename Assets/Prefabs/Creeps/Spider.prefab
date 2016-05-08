@@ -1893,7 +1893,7 @@ MonoBehaviour:
   health: 10
   money: 2
   resistance: 5
-  speed: 10.399996
+  speed: 6
   isBoss: 0
   health_bar: {fileID: 175226}
 --- !u!114 &11441022
@@ -2264,6 +2264,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: health
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isBoss
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
