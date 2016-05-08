@@ -117,7 +117,7 @@ public class TowerAttack : NetworkBehaviour {
 							SyncOwner syncOwner = GetComponent<SyncOwner> ();
 							PlayerId playerId = syncOwner.getOwner ().GetComponent<PlayerId> ();
 							playerId.GainMoney (unit.money);
-							--(((NetworkMan)NetworkMan.singleton).unitsAlive);
+							((NetworkMan)NetworkMan.singleton).decreaseUnits();
 							Destroy (g);
 							print ("Quedan " + (((NetworkMan)NetworkMan.singleton).unitsAlive) + " unidades vivas.");
 						} else

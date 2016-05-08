@@ -75,7 +75,7 @@ public class NetworkRpc : NetworkBehaviour {
 			instance.GetComponent<SyncOwner> ().setOwner (player);
 
 			NetworkServer.Spawn (instance);
-		++(((NetworkMan)NetworkMan.singleton).unitsAlive);
+			(((NetworkMan)NetworkMan.singleton)).increaseUnits();
 		}
 	}
 
