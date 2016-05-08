@@ -1327,12 +1327,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99e61aac5cee48e6b46c604141ca932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  max_health: 90
-  health: 90
+  damage: 33
+  max_health: 100
+  health: 100
   money: 15
   resistance: 5
   speed: 3
+  isBoss: 1
   health_bar: {fileID: 105152}
 --- !u!114 &11456588
 MonoBehaviour:
@@ -1704,15 +1705,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: damage
-      value: 10
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: max_health
-      value: 90
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: health
-      value: 90
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: money
@@ -1721,6 +1722,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: speed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isBoss
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
