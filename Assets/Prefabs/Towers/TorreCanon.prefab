@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 407850}
   - 33: {fileID: 3315848}
   - 23: {fileID: 2304774}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cannon1_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 456670}
   - 33: {fileID: 3379750}
   - 23: {fileID: 2341186}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cannon1_Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - 33: {fileID: 3398658}
   - 65: {fileID: 6562028}
   - 23: {fileID: 2363596}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cubo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 428690}
   - 95: {fileID: 9512844}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tow_Cannon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - 114: {fileID: 11454472}
   - 114: {fileID: 11451860}
   - 82: {fileID: 8235396}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TorreCanon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

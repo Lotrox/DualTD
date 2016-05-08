@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401934}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ GameObject:
   - 4: {fileID: 497830}
   - 33: {fileID: 3383364}
   - 23: {fileID: 2386260}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 473792}
   - 137: {fileID: 13793634}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   - 114: {fileID: 11405428}
   - 114: {fileID: 11494790}
   - 82: {fileID: 8237888}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TorreBasica
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - 33: {fileID: 3330738}
   - 65: {fileID: 6550194}
   - 23: {fileID: 2374866}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cubo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 435678}
   - 95: {fileID: 9514214}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tow_Crossbow2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 484420}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
