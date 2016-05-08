@@ -33,9 +33,14 @@ public class TowerDeleter : NetworkBehaviour {
 				GameObject owner = collider.GetComponent<SyncOwner> ().getOwner ();
 				if (owner == gameObject) {
 					CmdDestroyer (collider);
+					userUI.notifyAction (2);
+				} else {
+					userUI.notifyError ("La torre que intentas borrar no te pertenece. Es de tu rival.");
+					userUI.notifyAction(1);
 				}
 			} else {
-				print (hit.collider.gameObject.ToString());
+				userUI.notifyError ("No se puede eliminar esto. No es una torre.");
+				userUI.notifyAction(1);
 			}
 
 			readyForDelete = false;

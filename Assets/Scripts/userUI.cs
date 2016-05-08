@@ -33,7 +33,7 @@ public class userUI : MonoBehaviour {
 			if (audioSelect == 1)
 				aSour.PlayOneShot (error, 0.2f);
 			if (audioSelect == 2)
-				aSour.PlayOneShot (error, 0.5f);
+				aSour.PlayOneShot (destroy, 0.5f);
 			audioSelect = -1;
 		}
 	}
