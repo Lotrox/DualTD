@@ -51,7 +51,7 @@ public class NetworkRpc : NetworkBehaviour {
 				unit.damage += 1;
 				unit.health += 1;
 			}
-			unit.Update ();
+			unit.UpdateTower ();
 			num++;
 		}
 			
