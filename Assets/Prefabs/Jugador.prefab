@@ -88,7 +88,7 @@ MonoBehaviour:
   towers:
   - {fileID: 137752, guid: ed8ad73abd6919b49a7c93d79e9ef01d, type: 2}
   - {fileID: 181322, guid: 87daa9522904e4c9e8fb528a5721fb71, type: 2}
-  - {fileID: 0}
+  - {fileID: 117752, guid: bad29eaca57150f4b93064c9e6c38daa, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -216,6 +216,10 @@ Prefab:
       propertyPath: boss
       value: 
       objectReference: {fileID: 162742, guid: d49f3e666d536084ebf5ab83b869f6c3, type: 2}
+    - target: {fileID: 0}
+      propertyPath: towers.Array.data[2]
+      value: 
+      objectReference: {fileID: 117752, guid: bad29eaca57150f4b93064c9e6c38daa, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 186930}

@@ -1157,8 +1157,8 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0.1
-      value: 1
+    - time: 0.031318687
+      value: 0.97977936
       inSlope: -10.0039835
       outSlope: -10.0039835
       tangentMode: 0
@@ -1327,12 +1327,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99e61aac5cee48e6b46c604141ca932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
-  max_health: 10
-  health: 10
-  money: 2
+  damage: 10
+  max_health: 30
+  health: 30
+  money: 10
   resistance: 5
-  speed: 6
+  speed: 3
   health_bar: {fileID: 105152}
 --- !u!114 &11456588
 MonoBehaviour:
@@ -1693,7 +1693,35 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
+      value: 0.97977936
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].time
+      value: 0.031318687
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: max_health
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: money
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 152190}

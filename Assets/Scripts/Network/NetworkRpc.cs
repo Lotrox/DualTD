@@ -44,15 +44,17 @@ public class NetworkRpc : NetworkBehaviour {
 		print ("Spawn de unidad perteneciente al jugador " + playerId.getId ());
 
 		GameObject instance;
-		if (wave % 2 == 0) 
+		if (wave % 5 == 0) // Oleadas jefe.
 		{ 
-			creep.GetComponent<AgentScript> ().target = e [playerId.getId ()];
-			instance = (GameObject)Instantiate (creep, s [playerId.getId ()].position, s [playerId.getId ()].rotation);
-		} else
-		{
 			boss.GetComponent<AgentScript> ().target = e [playerId.getId ()];
 			instance = (GameObject)Instantiate (boss, s [playerId.getId ()].position, s [playerId.getId ()].rotation);
 			num = wave / 2;
+		} 
+		else // Oleadas arañas.
+		{ 
+			creep.GetComponent<AgentScript> ().target = e [playerId.getId ()];
+			instance = (GameObject)Instantiate (creep, s [playerId.getId ()].position, s [playerId.getId ()].rotation);
+
 		}
 
 		for (int i = 0; i <= num; ++i) 

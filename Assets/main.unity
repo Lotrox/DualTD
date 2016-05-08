@@ -28455,6 +28455,7 @@ MonoBehaviour:
   clipWave: {fileID: 8300000, guid: 6b577d5c68c08154290ad1aa80456026, type: 3}
   clipWait: {fileID: 8300000, guid: 78afb0ce5f16ffe47ae27631032a9368, type: 3}
   clipGong: {fileID: 8300000, guid: 8c26d3adf0ba0a84080c5d2dcd1987ee, type: 3}
+  clipBoss: {fileID: 8300000, guid: b3272e050f048d84b9b003d4c9615306, type: 3}
 --- !u!82 &2091613020
 AudioSource:
   m_ObjectHideFlags: 0
