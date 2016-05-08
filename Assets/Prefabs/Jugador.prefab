@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63b3104bd7d64abeb48c0b10d039da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creep: {fileID: 152190, guid: 2bc7664514b266f42b8406861249ddf1, type: 2}
-  boss: {fileID: 162742, guid: d49f3e666d536084ebf5ab83b869f6c3, type: 2}
+  creep: {fileID: 162742, guid: d49f3e666d536084ebf5ab83b869f6c3, type: 2}
+  boss: {fileID: 152190, guid: 2bc7664514b266f42b8406861249ddf1, type: 2}
 --- !u!114 &11430340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -195,7 +195,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: creep
       value: 
-      objectReference: {fileID: 152190, guid: 2bc7664514b266f42b8406861249ddf1, type: 2}
+      objectReference: {fileID: 162742, guid: d49f3e666d536084ebf5ab83b869f6c3, type: 2}
     - target: {fileID: 0}
       propertyPath: tower
       value: 
@@ -215,7 +215,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: boss
       value: 
-      objectReference: {fileID: 162742, guid: d49f3e666d536084ebf5ab83b869f6c3, type: 2}
+      objectReference: {fileID: 152190, guid: 2bc7664514b266f42b8406861249ddf1, type: 2}
     - target: {fileID: 0}
       propertyPath: towers.Array.data[2]
       value: 
