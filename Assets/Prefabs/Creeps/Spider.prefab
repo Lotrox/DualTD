@@ -1888,9 +1888,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99e61aac5cee48e6b46c604141ca932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 27
-  max_health: 112
-  health: 112
+  damage: 5
+  max_health: 10
+  health: 10
   money: 2
   resistance: 5
   speed: 10.399996
@@ -2252,6 +2252,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
       value: 0.80992645
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: max_health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
