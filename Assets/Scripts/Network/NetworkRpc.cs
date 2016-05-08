@@ -40,27 +40,17 @@ public class NetworkRpc : NetworkBehaviour {
 	public void CmdSpawnUnits(GameObject player, int wave) 
 	{
 		int num = wave;
+		float damage, health;
 		if ((wave % 5) == 0) 
-		{ // Oleadas jefe.
+		{
 			num = wave / 5;
-			UnitInfo unit = creep.GetComponent<UnitInfo> ();
-			unit.health += 50;
-			unit.damage += 10;
-			unit.UpdateUnit ();
+			health = (num - 1) * 10;
+			damage = (num - 1) * 10;
 		}
 		else 
 		{
-			UnitInfo unit = creep.GetComponent<UnitInfo> ();
-			if ((wave % 5) == 0) 
-			{
-				if (unit.speed < 10)
-					unit.speed += 0.5f;
-			}
-			if (wave % 5 == 0) {
-				unit.damage += 0.5f;
-				unit.health += 0.5f;
-			}
-			unit.UpdateUnit ();
+			health = wave * 2;
+			damage = wave * 2;
 			num++;
 		}
 			
@@ -82,7 +72,7 @@ public class NetworkRpc : NetworkBehaviour {
 			}
 
 			instance.GetComponent<SyncOwner> ().setOwner (player);
-
+			instance.GetComponent<SyncUnitInfo> ().setParams (damage, health);
 			NetworkServer.Spawn (instance);
 			(((NetworkMan)NetworkMan.singleton)).increaseUnits();
 		}
