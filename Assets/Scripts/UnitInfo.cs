@@ -3,6 +3,8 @@ using System.Collections;
 
 public class UnitInfo : MonoBehaviour {
 
+	private Object semaphore = new Object();
+
 	public float damage = 5; // Daño que provoca en el nexo.
 	public float max_health = 10; // Vida de la unidad.
 	public float health = 10; // Vida de la unidad.
@@ -21,5 +23,11 @@ public class UnitInfo : MonoBehaviour {
 		max_health = health;
 		NavMeshAgent nma = GetComponent<NavMeshAgent> ();
 		nma.speed = speed;
+	}
+
+	public void decreaseHealth(int amount) {
+		lock (semaphore) {
+			health -= amount;
+		}
 	}
 }

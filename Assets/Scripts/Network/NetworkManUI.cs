@@ -13,7 +13,7 @@ namespace UnityEngine.Networking
 		[SerializeField] public int offsetY;
 
 		// Runtime variable
-		bool showServer = false;
+		// bool showServer = false;
 		bool creditos = false;
 
 		void Awake()

@@ -7,7 +7,7 @@ public class userUI : MonoBehaviour {
 	GameObject menu;
 	static private Text t; 
 	static float timer = 0;
-	static bool disable = false;
+	// static bool disable = false;
 	public AudioClip buildTower;
 	public AudioClip destroy;
 	public AudioClip error;

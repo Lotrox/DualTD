@@ -108,7 +108,8 @@ public class TowerAttack : NetworkBehaviour {
 					if (unit.health > 0) {
 						lastHit = Time.realtimeSinceStartup;
 						RpcSound ();
-						unit.health -= (int)ti.damagePerHit;
+						//unit.health -= (int)ti.damagePerHit;
+						unit.decreaseHealth((int) ti.damagePerHit);
 						RpcDamage (g, (float)unit.health/unit.max_health);
 
 					}
