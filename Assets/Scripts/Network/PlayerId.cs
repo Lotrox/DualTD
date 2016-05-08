@@ -35,13 +35,13 @@ public class PlayerId : NetworkBehaviour {
 
 		if (id == 0)
 		{
-			Camera.main.transform.position = new Vector3 (18.0f, 30.0f, -24.0f);
+			Camera.main.transform.position = new Vector3 (33.0f, 30.0f, -7.0f);
 			Camera.main.GetComponent<freeCam>().updateCamera (false);
 			GetComponent<Flicking> ().swapMaterial (true); 
 		} 
 		else if (id == 1) 
 		{
-			Camera.main.transform.position = new Vector3 (82.0f, 30.0f, 124.0f);
+			Camera.main.transform.position = new Vector3 (67.0f, 30.0f, 107.0f);
 			Camera.main.GetComponent<freeCam>().updateCamera (true);
 			GetComponent<Flicking> ().swapMaterial (false); 
 		}
