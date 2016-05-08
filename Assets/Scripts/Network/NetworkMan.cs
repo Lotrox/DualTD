@@ -75,8 +75,8 @@ public class NetworkMan : NetworkManager {
 			if (firstWave)
 			{
 				firstWave = !firstWave;
-				A.GetComponent<PlayerId> ().GainMoney (50);
-				B.GetComponent<PlayerId> ().GainMoney (50);
+				A.GetComponent<PlayerId> ().GainMoney (25);
+				B.GetComponent<PlayerId> ().GainMoney (25);
 			}
 			
 			if (!waveSpawned) 

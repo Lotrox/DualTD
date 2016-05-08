@@ -27,25 +27,36 @@ public class TowerDeleter : NetworkBehaviour {
 			RaycastHit hit = new RaycastHit ();
 			Physics.Raycast (vRay, out hit, 1000);
 			if (hit.collider.gameObject.transform.parent != null) {
-			GameObject collider = hit.collider.gameObject.transform.parent.gameObject;
+				GameObject collider = hit.collider.gameObject.transform.parent.gameObject;
 
-			TowerInfo ti = collider.GetComponent<TowerInfo> ();
-			if (ti != null) {
-			  GameObject owner = collider.GetComponent<SyncOwner> ().getOwner ();
-			  if (owner == gameObject) {
-				CmdDestroyer (collider);
-				userUI.notifyAction (2);
-			  } else {
-				userUI.notifyError ("La torre que intentas borrar no te pertenece. Es de tu rival.");
-				userUI.notifyAction (1);
-			  }
-			} else {
-			  userUI.notifyError ("No se puede eliminar esto. No es una torre.");
-			  userUI.notifyAction (1);
+				TowerInfo ti = collider.GetComponent<TowerInfo> ();
+				if (ti != null) 
+				{
+					GameObject owner = collider.GetComponent<SyncOwner> ().getOwner ();
+					if (owner == gameObject) 
+					{
+						CmdDestroyer (collider);
+						userUI.notifyAction (2);
+					}
+					else
+					{
+						userUI.notifyError ("La torre que intentas borrar no te pertenece. Es de tu rival.");
+						userUI.notifyAction (1);
+					}
+				} 
+				else 
+				{
+					userUI.notifyError ("No se puede eliminar esto. No es una torre.");
+					userUI.notifyAction (1);
+				}
+
+				readyForDelete = false;
 			}
-
-			readyForDelete = false;
-		  }
+			else 
+			{
+				userUI.notifyError ("No se puede eliminar esto. No es una torre.");
+				userUI.notifyAction (1);
+			}
 		}
 	}
 
