@@ -66,6 +66,10 @@ namespace UnityEngine.Networking
 				{
 					creditos = !creditos;
 				}
+				if (GUI.Button(new Rect(Screen.width - 300, Screen.height - 150, 200, 40), "SALIR DEL JUEGO"))
+				{
+					Application.Quit ();
+				}
 				if (creditos) {
 					GUIStyle myStyle = new GUIStyle(GUI.skin.label);
 					myStyle.fontSize = 18;
