@@ -39,25 +39,25 @@ public class NetworkRpc : NetworkBehaviour {
 	[Command]
 	public void CmdSpawnUnits(GameObject player, int wave) 
 	{
-		int num = wave+1;
+		int num = wave;
 		PlayerId playerId = player.GetComponent<PlayerId> ();
 		print ("Spawn de unidad perteneciente al jugador " + playerId.getId ());
 
 		GameObject instance;
-		if (num % 5 == 0) // Oleadas jefe.
+		if ((num % 5) == 0) // Oleadas jefe.
 		{ 
 			boss.GetComponent<AgentScript> ().target = e [playerId.getId ()];
 			instance = (GameObject)Instantiate (boss, s [playerId.getId ()].position, s [playerId.getId ()].rotation);
-			num = num / 5;
+			num = wave / 5;
 		} 
 		else // Oleadas arañas.
 		{ 
 			creep.GetComponent<AgentScript> ().target = e [playerId.getId ()];
 			instance = (GameObject)Instantiate (creep, s [playerId.getId ()].position, s [playerId.getId ()].rotation);
-
+			num++;
 		}
 
-		for (int i = 0; i <= num; ++i) 
+		for (int i = 0; i < num; ++i) 
 		{
 			instance.GetComponent<SyncOwner> ().setOwner (player);
 			NetworkServer.Spawn (instance);

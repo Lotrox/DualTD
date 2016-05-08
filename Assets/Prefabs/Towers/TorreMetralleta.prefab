@@ -525,11 +525,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
-  cost: 25
-  range: 7
+  cost: 15
+  range: 8
   damagePerHit: 1
-  damagePerArea: 10
-  speedAttack: 0.5
+  damagePerArea: 0
+  speedAttack: 0.4
 --- !u!114 &11457238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -666,6 +666,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_ChildIndex
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cost
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: range
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damagePerHit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: speedAttack
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

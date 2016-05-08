@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  cost: 15
+  cost: 10
   range: 10
   damagePerHit: 2
   damagePerArea: 0
@@ -744,6 +744,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: damagePerHit
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: range
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
