@@ -39,9 +39,10 @@ public class NexusBehaviour : NetworkBehaviour {
 				playerId.TakeDamage ((int)((float) unit.health * unit.damage / (float)unit.max_health));
 			else
 				playerId.TakeDamage (unit.damage);
+			
 			syncOwner.getOwner ().GetComponent<PlayerId> ().GainMoney (unit.money);
 			Destroy(other.gameObject);
-			--(((NetworkMan)NetworkMan.singleton).unitsAlive);
+			((NetworkMan)NetworkMan.singleton).decreaseUnits();
 
 			// Rotura de fragmentos.
 			A.GetComponent<NetworkRpc> ().RpcNexusUnspawnCrystal (playerId.getId(), playerId.health);

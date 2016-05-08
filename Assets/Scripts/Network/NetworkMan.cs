@@ -7,10 +7,10 @@ public class NetworkMan : NetworkManager {
 
 	int count;
 	int wave = 0;
-	int unitsPerWave = 3;
 	bool waveSpawned = false;
-	float globalTime, // Trata sobre el tiempo global desde que se inició la partida.
-	      waveTime; // Trata sobre el tiempo desde que se inició la última oleada y/o en curso.
+	float waveTime; // Trata sobre el tiempo desde que se inició la última oleada y/o en curso.
+
+	Object semaphore = new Object();
 
 	public GameObject A, B; // Jugadores 1 y 2.
 	private NetworkConnection Ac, Bc;
@@ -55,7 +55,7 @@ public class NetworkMan : NetworkManager {
 					B = player;
 					Bc = conn;
 					init = true;
-					waveTime = globalTime = Time.realtimeSinceStartup;
+					waveTime = Time.realtimeSinceStartup;
 					print ("Ha comenzado la partida");
 					A.GetComponent<NetworkRpc> ().RpcStandby ();
 					B.GetComponent<NetworkRpc> ().RpcStandby ();
@@ -115,6 +115,22 @@ public class NetworkMan : NetworkManager {
 		A.GetComponent<NetworkRpc> ().RpcSpawnUnits (wave);
 		B.GetComponent<NetworkRpc> ().RpcSpawnUnits (wave);
 	}
-		
+
+
+	// Incrementa el número de unidades.
+	public void increaseUnits()
+	{
+		lock (semaphore) {
+			++unitsAlive;
+		}
+	}
+
+	// Decrementa el número de unidades.
+	public void decreaseUnits() 
+	{
+		lock (semaphore) {
+			--unitsAlive;
+		}
+	}
 }
 
