@@ -37,7 +37,7 @@ public class freeCam : MonoBehaviour {
 			return;
 		
 		if (Input.GetKey (KeyCode.Mouse1)) panCam ();
-		else translateCam ();
+		//else translateCam ();
 		zoomCam ();
 		//rotateCam ();
 	}
@@ -60,7 +60,7 @@ public class freeCam : MonoBehaviour {
 				transform.Translate (Vector3.forward * Time.deltaTime * ScrollSpeed, Space.World);
 			} else 
 			{
-				transform.Translate (Vector3.forward * Time.deltaTime * -ScrollSpeed, Space.World);
+				transform.Translate (Vector3.forward * Time.deltaTime * ScrollSpeed, Space.World);
 			}
 
 		} else if ((Input.GetKey (KeyCode.DownArrow)) && transform.position.z >= lim_z + Camera.main.orthographicSize*2)
@@ -79,7 +79,6 @@ public class freeCam : MonoBehaviour {
 
 	void panCam()
 	{
-		Vector3 v = transform.position;
 		if (playerOne) {
 			transform.Translate (Vector3.forward * Time.deltaTime * PanSpeed * (Input.mousePosition.y - Screen.height * 0.5f) / (Screen.height * 0.5f), Space.World); 
 			transform.Translate (Vector3.right * Time.deltaTime * PanSpeed * (Input.mousePosition.x - Screen.width * 0.5f) / (Screen.width * 0.5f), Space.World); 
