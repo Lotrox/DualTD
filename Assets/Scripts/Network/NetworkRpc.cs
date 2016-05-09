@@ -49,8 +49,17 @@ public class NetworkRpc : NetworkBehaviour {
 		}
 		else 
 		{
-			health = wave * 2;
-			damage = wave * 2;
+			if (num >= 10) {
+				
+				health = wave * 2.5f;
+				damage = wave * 2.5f;
+				num = 10;
+			}
+			else 
+			{
+				health = wave * 2;
+				damage = wave * 2;
+			}
 			num++;
 		}
 			

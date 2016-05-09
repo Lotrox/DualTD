@@ -14,6 +14,7 @@ public class freeCam : MonoBehaviour {
 	private float lim_z = -6f - 18f * 2f;
 	private float lim_Z = 33.4f + 18f * 2f;
 
+
 	private bool playerOne = true; // Booleano que nos indica si este jugador es el 1 o no.
 
 	public Texture2D normalCursor;
@@ -36,22 +37,22 @@ public class freeCam : MonoBehaviour {
 			return;
 		
 		if (Input.GetKey (KeyCode.Mouse1)) panCam ();
-		// else translateCam ();
+		else translateCam ();
 		zoomCam ();
 		//rotateCam ();
 	}
 
 	void translateCam()
 	{
-		if ((Input.GetKey (KeyCode.RightArrow) || Input.mousePosition.x >= Screen.width * (1 - ScrollEdge)) && (transform.position.x) <= (lim_X - Camera.main.orthographicSize*2))
+		if ((Input.GetKey (KeyCode.RightArrow)) && (transform.position.x) <= (lim_X - Camera.main.orthographicSize*2))
 		{
 			transform.Translate (Vector3.right * Time.deltaTime * ScrollSpeed, Space.Self);
-		} else if ((Input.GetKey (KeyCode.LeftArrow) || Input.mousePosition.x <= Screen.width * ScrollEdge) && transform.position.x >= lim_x + Camera.main.orthographicSize*2)
+		} else if ((Input.GetKey (KeyCode.LeftArrow)) && transform.position.x >= lim_x + Camera.main.orthographicSize*2)
 		{
 			transform.Translate (Vector3.right * Time.deltaTime * -ScrollSpeed, Space.Self);
 		}
 
-		if ((Input.GetKey (KeyCode.UpArrow) || Input.mousePosition.y >= Screen.height * (1 - ScrollEdge)) && transform.position.z <= lim_Z - Camera.main.orthographicSize*2)
+		if ((Input.GetKey (KeyCode.UpArrow)) && transform.position.z <= lim_Z - Camera.main.orthographicSize*2)
 		{
 
 			if (playerOne) 
@@ -62,7 +63,7 @@ public class freeCam : MonoBehaviour {
 				transform.Translate (Vector3.forward * Time.deltaTime * -ScrollSpeed, Space.World);
 			}
 
-		} else if ((Input.GetKey (KeyCode.DownArrow) || Input.mousePosition.y <= Screen.height * ScrollEdge) && transform.position.z >= lim_z + Camera.main.orthographicSize*2)
+		} else if ((Input.GetKey (KeyCode.DownArrow)) && transform.position.z >= lim_z + Camera.main.orthographicSize*2)
 		{
 			if (playerOne) 
 			{
@@ -78,12 +79,14 @@ public class freeCam : MonoBehaviour {
 
 	void panCam()
 	{
+		Vector3 v = transform.position;
 		if (playerOne) {
 			transform.Translate (Vector3.forward * Time.deltaTime * PanSpeed * (Input.mousePosition.y - Screen.height * 0.5f) / (Screen.height * 0.5f), Space.World); 
 			transform.Translate (Vector3.right * Time.deltaTime * PanSpeed * (Input.mousePosition.x - Screen.width * 0.5f) / (Screen.width * 0.5f), Space.World); 
+			
 		} else {
 			transform.Translate (Vector3.forward * Time.deltaTime * -PanSpeed * (Input.mousePosition.y - Screen.height * 0.5f) / (Screen.height * 0.5f), Space.World);
-			transform.Translate (Vector3.right * Time.deltaTime * -PanSpeed * (Input.mousePosition.x - Screen.width * 0.5f) / (Screen.width * 0.5f), Space.World);
+			transform.Translate (Vector3.right * Time.deltaTime * -PanSpeed * (Input.mousePosition.x - Screen.width * 0.5f) / (Screen.width * 0.5f), Space.World); 
 		}
 	}
 
