@@ -102,13 +102,7 @@ public class NetworkMan : NetworkManager {
 	}
 		
 	bool waveFinished() {
-		if (unitsAlive <= 0) 
-		{
-			print ("La oleada ha finalizado");
-			unitsAlive = 0;
-		}
-		
-		return (unitsAlive <= 0);
+		return (GameObject.FindGameObjectsWithTag ("Enemigo").Length <= 0);
 	}
 		
 	void spawnUnits() {
