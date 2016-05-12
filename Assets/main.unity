@@ -1953,7 +1953,7 @@ RectTransform:
   - {fileID: 494246926}
   - {fileID: 2095913815}
   m_Father: {fileID: 323455031}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0.0078044967}
   m_AnchorMax: {x: 1, y: 0.068}
   m_AnchoredPosition: {x: -0.9998779, y: -1.1999998}
@@ -2127,7 +2127,7 @@ GameObject:
   - 114: {fileID: 158111133}
   - 114: {fileID: 158111132}
   m_Layer: 5
-  m_Name: Torre_canon
+  m_Name: Torre_metralletaa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2163,7 +2163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196b9508debb042379ff9c6b48a5bebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 181322, guid: 87daa9522904e4c9e8fb528a5721fb71, type: 2}
+  tower: {fileID: 117752, guid: bad29eaca57150f4b93064c9e6c38daa, type: 2}
 --- !u!114 &158111133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2357,7 +2357,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: e6b7d0e0d9f503c4087303742d58b649, type: 3}
+  m_Texture: {fileID: 2800000, guid: 7512eaf4ee6a2c34db703fa26683a3bd, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4198,6 +4198,7 @@ RectTransform:
   - {fileID: 1261969158}
   - {fileID: 158111131}
   - {fileID: 1205230812}
+  - {fileID: 837095141}
   - {fileID: 146236269}
   m_Father: {fileID: 1858012732}
   m_RootOrder: 1
@@ -4580,6 +4581,94 @@ MeshFilter:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 894d5b133cac3984ca368629ab355a06, type: 2}
   m_PrefabInternal: {fileID: 798159124}
+--- !u!1 &352259308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 352259309}
+  - 222: {fileID: 352259312}
+  - 114: {fileID: 352259311}
+  - 114: {fileID: 352259310}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &352259309
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 352259308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 837095141}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0.4557804, y: 0.056228463}
+  m_AnchorMax: {x: 0.96315217, y: 0.92855656}
+  m_AnchoredPosition: {x: -0.19999981, y: -0.065}
+  m_SizeDelta: {x: -3.7200022, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &352259310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 352259308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
+--- !u!114 &352259311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 352259308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 10
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 90
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 0.8
+  m_Text: "<b>Torre a\xE9rea</b>\n\n<b>Precio:</b> 20g\n<b>Rango:</b> Muy alto\n<b>Da\xF1o:</b>
+    1\n<b>Veloc:</b> 1"
+--- !u!222 &352259312
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 352259308}
 --- !u!1 &364802900
 GameObject:
   m_ObjectHideFlags: 0
@@ -5791,7 +5880,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
   m_Text: "<b>Torre b\xE1sica</b>\n\n<b>Precio:</b> 10g\n<b>Rango:</b> Medio\n<b>Da\xF1o:</b>
-    Bajo\n<b>Veloc:</b> Media"
+    2\n<b>Veloc:</b> 1"
 --- !u!222 &452036673
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12600,6 +12689,199 @@ Transform:
   - {fileID: 1545272797}
   m_Father: {fileID: 193155756}
   m_RootOrder: 8
+--- !u!1 &837095140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 837095141}
+  - 223: {fileID: 837095148}
+  - 114: {fileID: 837095147}
+  - 114: {fileID: 837095146}
+  - 222: {fileID: 837095145}
+  - 114: {fileID: 837095144}
+  - 114: {fileID: 837095143}
+  - 114: {fileID: 837095142}
+  m_Layer: 5
+  m_Name: Torre_aerea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &837095141
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 837095140}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2032386539}
+  - {fileID: 352259309}
+  m_Father: {fileID: 323455031}
+  m_RootOrder: 4
+  m_AnchorMin: {x: 0, y: 0.41543913}
+  m_AnchorMax: {x: 1, y: 0.53587824}
+  m_AnchoredPosition: {x: -1.000061, y: 0.80000305}
+  m_SizeDelta: {x: -2, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &837095142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 837095140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 196b9508debb042379ff9c6b48a5bebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 153338, guid: 84d93fe7fb05c06479e2a39c9a52b769, type: 2}
+--- !u!114 &837095143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 837095140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.27605972, g: 0.2890004, b: 0.5441177, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 837095144}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 837095142}
+        m_MethodName: changeTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &837095144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 837095140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.141}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &837095145
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 837095140}
+--- !u!114 &837095146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 837095140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &837095147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 837095140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &837095148
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 837095140}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &840960481
 GameObject:
   m_ObjectHideFlags: 0
@@ -14314,7 +14596,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 7512eaf4ee6a2c34db703fa26683a3bd, type: 3}
+  m_Texture: {fileID: 2800000, guid: e6b7d0e0d9f503c4087303742d58b649, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -16298,7 +16580,7 @@ GameObject:
   - 114: {fileID: 1205230814}
   - 114: {fileID: 1205230813}
   m_Layer: 5
-  m_Name: Torre_metralleta
+  m_Name: Torre_canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16334,7 +16616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196b9508debb042379ff9c6b48a5bebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 117752, guid: bad29eaca57150f4b93064c9e6c38daa, type: 2}
+  tower: {fileID: 169540, guid: 87daa9522904e4c9e8fb528a5721fb71, type: 2}
 --- !u!114 &1205230814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16928,7 +17210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196b9508debb042379ff9c6b48a5bebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 137752, guid: ed8ad73abd6919b49a7c93d79e9ef01d, type: 2}
+  tower: {fileID: 125300, guid: ed8ad73abd6919b49a7c93d79e9ef01d, type: 2}
 --- !u!1 &1269642180
 GameObject:
   m_ObjectHideFlags: 0
@@ -18780,8 +19062,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "<b>Torre metralleta</b>\n\n<b>Precio:</b> 15g\n<b>Rango:</b> Medio\n<b>Da\xF1o:</b>
-    Bajo\n<b>Veloc:</b> Muy alta"
+  m_Text: "<b>Torre metralleta</b>\n\n<b>Precio:</b> 20g\n<b>Rango:</b> Bajo\n<b>Da\xF1o:</b>
+    10\n<b>Veloc:</b> 0.5"
 --- !u!222 &1502691123
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26192,6 +26474,72 @@ MeshFilter:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 894d5b133cac3984ca368629ab355a06, type: 2}
   m_PrefabInternal: {fileID: 1796555810}
+--- !u!1 &2032386538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 2032386539}
+  - 222: {fileID: 2032386541}
+  - 114: {fileID: 2032386540}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2032386539
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2032386538}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 837095141}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0.036891326, y: 0.07778493}
+  m_AnchorMax: {x: 0.40415227, y: 0.90700006}
+  m_AnchoredPosition: {x: 0.109999955, y: 0.02000022}
+  m_SizeDelta: {x: -1.0600002, y: -0.3600006}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2032386540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2032386538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.584}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 2800000, guid: e6698548d6c922647b7d1cedccad67d1, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &2032386541
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2032386538}
 --- !u!4 &2033440902 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 894d5b133cac3984ca368629ab355a06, type: 2}
@@ -27978,8 +28326,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "<b>Torre ca\xF1\xF3n</b>\n\n<b>Precio:</b> 20g\n<b>Rango:</b> Muy bajo\n<b>Da\xF1o:</b>
-    Alto\n<b>Veloc:</b> Muy baja"
+  m_Text: "<b>Torre metralleta</b>\n\n<b>Precio:</b> 15g\n<b>Rango:</b> Bajo\n<b>Da\xF1o:</b>
+    1\n<b>Veloc:</b> 3.3"
 --- !u!222 &2114498268
 CanvasRenderer:
   m_ObjectHideFlags: 0
