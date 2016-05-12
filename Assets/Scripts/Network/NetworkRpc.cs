@@ -44,13 +44,13 @@ public class NetworkRpc : NetworkBehaviour {
 		if ((wave % 5) == 0) // Oleada del jefe
 		{
 			num = wave / 5;
-			health = (num - 1) * 500; // 100 -> 500 * 2 -> 1000 * 3 -> 15000 * 4...
-			damage = (num - 1) * 500; 
+			health = (num - 1) * 200; // 100 -> 500 * 2 -> 1000 * 3 -> 15000 * 4...
+			damage = (num - 1) * 100; 
 		}
 		else 
 		{
-			health = wave * Mathf.Log (wave);
-			damage = wave * Mathf.Log (wave);
+			health = (wave + wave/5) * Mathf.Log (wave + wave/5);
+			damage = (wave + wave/5) * Mathf.Log (wave + wave/5);
 
 			num++; // Incrementar número de unidades.
 			if (num >= 10) 
