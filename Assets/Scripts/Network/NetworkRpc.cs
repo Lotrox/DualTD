@@ -44,8 +44,8 @@ public class NetworkRpc : NetworkBehaviour {
 		if ((wave % 5) == 0) // Oleada del jefe
 		{
 			num = wave / 5;
-			health = (num - 1) * 200; // 100 -> 500 * 2 -> 1000 * 3 -> 15000 * 4...
-			damage = (num - 1) * 100; 
+			health = (num - 1) * 100; // 100 -> 500 * 2 -> 1000 * 3 -> 15000 * 4...
+			damage = (num - 1) * 50; 
 		}
 		else 
 		{
