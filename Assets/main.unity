@@ -5880,7 +5880,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
   m_Text: "<b>Torre b\xE1sica</b>\n\n<b>Precio:</b> 10g\n<b>Rango:</b> Medio\n<b>Da\xF1o:</b>
-    2\n<b>Veloc:</b> x1"
+    1.5\n<b>Veloc:</b> x1"
 --- !u!222 &452036673
 CanvasRenderer:
   m_ObjectHideFlags: 0
