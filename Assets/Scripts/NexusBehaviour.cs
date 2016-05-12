@@ -35,10 +35,10 @@ public class NexusBehaviour : NetworkBehaviour {
 			{
 				playerId = B.GetComponent<PlayerId> ();
 			} 
-			if (unit.isBoss)
-				playerId.TakeDamage ((int)((float) unit.health * unit.damage / (float)unit.max_health));
-			else
-				playerId.TakeDamage ((int)unit.damage);
+			//if (unit.isBoss)
+			playerId.TakeDamage ((int)((float) unit.health * unit.damage / (float)unit.max_health));
+			//else
+			//	playerId.TakeDamage ((int)unit.damage);
 			
 			syncOwner.getOwner ().GetComponent<PlayerId> ().GainMoney (unit.money/3);
 			Destroy(other.gameObject);
