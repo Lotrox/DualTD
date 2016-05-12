@@ -422,7 +422,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.5
-  m_Pitch: 1
+  m_Pitch: 1.24
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66b36b4c42b34ab2b308d5c9c606b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aClip: {fileID: 8300000, guid: 38c15aed5a23cbb438b770604dd776d1, type: 3}
+  aClip: {fileID: 8300000, guid: f7d772add2c739b4683cd5e4ec4ea742, type: 3}
 --- !u!114 &11453988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -658,6 +658,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: range
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: aClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f7d772add2c739b4683cd5e4ec4ea742, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Pitch
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Loop
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
